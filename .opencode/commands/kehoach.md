@@ -1,11 +1,14 @@
 ---
 description: Lap ke hoach phan tich cho task - chi phan tich, khong sua file
 agent: kehoach
+subtask: true
 ---
 
-# Ke Hoach
+# /kehoach - Lap Ke Hoach Du An
 
-Task: $ARGUMENTS
+$ARGUMENTS
+
+---
 
 ## Huong dan
 
@@ -45,3 +48,15 @@ Tra ve ket qua theo format sau:
 ## Effort
 [Uoc tinh effort: Small/Medium/Large]
 ```
+
+---
+
+## Vi Du Dat Ten File Plan
+
+| Request | Plan File |
+|---------|-----------|
+| `/kehoach e-commerce site with cart` | `docs/PLAN-ecommerce-cart.md` |
+| `/kehoach mobile app for fitness` | `docs/PLAN-fitness-app.md` |
+| `/kehoach add dark mode feature` | `docs/PLAN-dark-mode.md` |
+| `/kehoach fix authentication bug` | `docs/PLAN-auth-fix.md` |
+| `/kehoach SaaS dashboard` | `docs/PLAN-saas-dashboard.md` |
