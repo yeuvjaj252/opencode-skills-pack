@@ -1,22 +1,22 @@
 # Changelog
 
-Tat ca cac thay doi noi bat cua pack se duoc ghi lai tai day.
+Tất cả các thay đổi nổi bật của pack sẽ được ghi lại tại đây.
 
 ## [1.0.0] - 2026-02-24
 
 ### Added
-- Agent `kehoach`: Planning-only agent chi phan tich, khong sua file
-- Agent `cook`: Implementation agent thuc thi thay doi
-- Command `/kehoach`: Lap ke hoach phan tich cho task
-- Command `/cook`: Thuc thi task theo ke hoach
-- Skill `plan-writing`: Huong dan cau truc ke hoach
+- Agent `kehoach`: Planning-only agent chỉ phân tích, không sửa file
+- Agent `cook`: Implementation agent thực thi thay đổi
+- Command `/kehoach`: Lập kế hoạch phân tích cho task
+- Command `/cook`: Thực thi task theo kế hoạch
+- Skill `plan-writing`: Hướng dẫn cấu trúc kế hoạch
 - Skill `coding-standard`: Coding standards cho TypeScript/JavaScript, Python, Go, Rust
-- Skill `test-strategy`: Testing patterns va nguyen tac
+- Skill `test-strategy`: Testing patterns và nguyên tắc
 
 ### Features
-- Symlink-based installation (de update, rollback)
-- Manifest tracking cho uninstall/update chinh xac
-- Ho tro multiple projects (moi project cau hinh rieng)
+- Symlink-based installation (để update, rollback)
+- Manifest tracking cho uninstall/update chính xác
+- Hỗ trợ multiple projects (mỗi project cấu hình riêng)
 - Color-coded output cho install/uninstall/update scripts
 
 ### Installation
@@ -26,8 +26,8 @@ Tat ca cac thay doi noi bat cua pack se duoc ghi lai tai day.
 
 ### Usage
 ```bash
-/kehoach <task>  # Lap ke hoach
-/cook <task>     # Thuc thi
+/kehoach <task>  # Lập kế hoạch
+/cook <task>     # Thực thi
 ```
 
 ### Update
@@ -45,8 +45,8 @@ Tat ca cac thay doi noi bat cua pack se duoc ghi lai tai day.
 ## [Unreleased]
 
 ### Planned
-- [ ] Them nhieu skills (refactor, debug, security-audit)
-- [ ] Ho tro config qua opencode.json
-- [ ] Them command `/kehoach-tu-file` de doc ke hoach tu file
-- [ ] Them pre-commit hooks cho linting
-- [ ] Them telemetry cho usage tracking (opt-in)
+- [ ] Thêm nhiều skills (refactor, debug, security-audit)
+- [ ] Hỗ trợ config qua opencode.json
+- [ ] Thêm command `/kehoach-tu-file` để đọc kế hoạch từ file
+- [ ] Thêm pre-commit hooks cho linting
+- [ ] Thêm telemetry cho usage tracking (opt-in)

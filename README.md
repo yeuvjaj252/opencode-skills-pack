@@ -1,94 +1,94 @@
-# OpenCode Kehoach Cook Pack
+# OpenCode Kế Hoạch Cook Pack
 
-Bo pack mo rong cho OpenCode voi 2 che do hoat dong: `/kehoach` (lap ke hoach) va `/cook` (thuc thi).
+Bộ pack mở rộng cho OpenCode với 2 chế độ hoạt động: `/kehoach` (lập kế hoạch) và `/cook` (thực thi).
 
-## Tinh nang
+## Tính năng
 
-- **Agents**: `kehoach` (planning-only) va `cook` (implementation)
-- **Commands**: `/kehoach` va `/cook` 
+- **Agents**: `kehoach` (planning-only) và `cook` (implementation)
+- **Commands**: `/kehoach` và `/cook`
 - **Skills**: `plan-writing`, `coding-standard`, `test-strategy`
 
-## Cai dat
+## Cài đặt
 
-### Cau truoc
+### Yêu cầu trước
 
-- OpenCode da duoc cai dat
+- OpenCode đã được cài đặt
 - Bash shell (Linux/macOS/WSL)
 
-### Buoc cai dat
+### Bước cài đặt
 
 ```bash
-# Clone repo hoac tai pack ve may
-git clone <your-repo-url> opencode-kehoach-cook-pack
-cd opencode-kehoach-cook-pack
+# Clone repo về máy
+git clone https://github.com/yeuvjaj252/opencode-skills-pack.git
+cd opencode-skills-pack
 
-# Cai dat vao project hien tai
+# Cài đặt vào project hiện tại
 ./bin/install.sh
 
-# Hoac cai dat vao project cu the
+# Hoặc cài đặt vào project cụ thể
 ./bin/install.sh -p /path/to/project
 ```
 
-## Su dung
+## Sử dụng
 
-### Che do Ke Hoach (Planning)
+### Chế độ Kế Hoạch (Planning)
 
 ```bash
 /kehoach Them chuc nang search cho trang home
 ```
 
-Agent `kehoach` se:
-- Phan tich yeu cau
-- Khao sat code hien tai
-- De xuat cac buoc thuc hien
-- Xac dinh risk
-- De xuat test strategy
+Agent `kehoach` sẽ:
+- Phân tích yêu cầu
+- Khảo sát code hiện tại
+- Đề xuất các bước thực hiện
+- Xác định rủi ro
+- Đề xuất test strategy
 
-**Luu y**: Agent nay chi phan tich, KHONG thay doi file.
+**Lưu ý**: Agent này chỉ phân tích, KHÔNG thay đổi file.
 
-### Che do Cook (Implementation)
+### Chế độ Cook (Implementation)
 
 ```bash
 /cook Them chuc nang search cho trang home
 ```
 
-Agent `cook` se:
-- Thuc hien thay doi theo yeu cau
+Agent `cook` sẽ:
+- Thực hiện thay đổi theo yêu cầu
 - Follow coding standards
-- Chay lint/typecheck
+- Chạy lint/typecheck
 - Verify bang test
-- Bao cao ket qua
+- Báo cáo kết quả
 
-### Chuyen doi giua che do
+### Chuyển đổi giữa chế độ
 
 Trong OpenCode TUI:
-- Su dung phim **Tab** de chuyen doi giua cac agent
-- Hoac su dung lenh `/kehoach` va `/cook` truc tiep
+- Sử dụng phím **Tab** để chuyển đổi giữa các agent
+- Hoặc sử dụng lệnh `/kehoach` và `/cook` trực tiếp
 
-## Cap nhat
+## Cập nhật
 
 ```bash
-# Cap nhat pack
+# Cập nhật pack
 ./bin/update.sh
 
-# Cap nhat cuong bap
+# Cập nhật cưỡng bức
 ./bin/update.sh -p /path/to/project
 ```
 
-## Go cai dat
+## Gỡ cài đặt
 
 ```bash
-# Go cai dat
+# Gỡ cài đặt
 ./bin/uninstall.sh
 
-# Go cai dat khoi project cu the
+# Gỡ cài đặt khỏi project cụ thể
 ./bin/uninstall.sh -p /path/to/project
 ```
 
-## Cau truc
+## Cấu trúc
 
 ```
-opencode-kehoach-cook-pack/
+opencode-skills-pack/
 ├── .opencode/
 │   ├── skills/
 │   │   ├── plan-writing/
@@ -108,30 +108,30 @@ opencode-kehoach-cook-pack/
 └── CHANGELOG.md
 ```
 
-## Them moi Skill
+## Thêm mới Skill
 
-De them skill moi:
+Để thêm skill mới:
 
-1. Tao thu muc `.opencode/skills/<ten-skill>/`
-2. Tao file `SKILL.md` ben trong voi frontmatter:
+1. Tạo thư mục `.opencode/skills/<ten-skill>/`
+2. Tạo file `SKILL.md` bên trong với frontmatter:
 
 ```yaml
 ---
 name: ten-skill
-description: Mo ta skill
+description: Mô tả skill
 compatibility: opencode
 ---
 ```
 
-3. Cap nhat lai pack:
+3. Cập nhật lại pack:
 
 ```bash
 ./bin/update.sh -f
 ```
 
-## Cau hinh them (Optional)
+## Cấu hình thêm (Optional)
 
-Tao file `opencode.json` trong project neu can thay doi quyen:
+Tạo file `opencode.json` trong project nếu cần thay đổi quyền:
 
 ```json
 {
@@ -146,32 +146,32 @@ Tao file `opencode.json` trong project neu can thay doi quyen:
 }
 ```
 
-## Troubleshooting
+## Khắc phục sự cố
 
-### Khong thay lenh /kehoach hoac /cook
+### Không thấy lệnh /kehoach hoặc /cook
 
-Dam bao pack da duoc cai dung:
+Đảm bảo pack đã được cài đúng:
 ```bash
 ls -la .opencode/commands/
 ```
 
-### Agent khong hien thi
+### Agent không hiển thị
 
-Kiem tra agent da duoc link:
+Kiểm tra agent đã được link:
 ```bash
 ls -la .opencode/agents/
 ```
 
-### Symlink loi
+### Symlink lỗi
 
-Xoa va cai lai:
+Xóa và cài lại:
 ```bash
 ./bin/install.sh -f
 ```
 
-## Dong gop
+## Đóng góp
 
-Moi contribution deu duoc welcome! Vui long tao PR voi mo ta chi tiet.
+Mọi contribution đều được welcome! Vui lòng tạo PR với mô tả chi tiết.
 
 ## License
 
