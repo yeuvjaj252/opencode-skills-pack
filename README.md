@@ -22,12 +22,17 @@ Bộ pack mở rộng cho OpenCode với 2 chế độ hoạt động: `/kehoach
 git clone https://github.com/yeuvjaj252/opencode-skills-pack.git
 cd opencode-skills-pack
 
-# Cài đặt vào project hiện tại
-./bin/install.sh
-
-# Hoặc cài đặt vào project cụ thể
+# Cài đặt vào project cụ thể (khuyến nghị)
 ./bin/install.sh -p /path/to/project
+
+# Ví dụ cài từ repo pack vào project bên cạnh
+./bin/install.sh -p ../my-project
 ```
+
+Lưu ý quan trọng:
+- Không chạy `./bin/install.sh` để cài vào chính repo `opencode-skills-pack`.
+- Script đã chặn self-install để tránh ghi đè source pack.
+- Luôn dùng `-p` để chỉ định đúng thư mục project đích.
 
 ## Sử dụng
 
