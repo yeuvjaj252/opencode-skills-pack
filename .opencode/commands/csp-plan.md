@@ -1,10 +1,10 @@
 ---
 description: Lap ke hoach phan tich cho task - chi phan tich, khong sua file
-agent: kehoach
+agent: csp-plan
 subtask: true
 ---
 
-# /kehoach - Lap Ke Hoach Du An
+# /csp-plan - Lap Ke Hoach Du An
 
 $ARGUMENTS
 
@@ -55,8 +55,8 @@ Tra ve ket qua theo format sau:
 
 | Request | Plan File |
 |---------|-----------|
-| `/kehoach e-commerce site with cart` | `docs/PLAN-ecommerce-cart.md` |
-| `/kehoach mobile app for fitness` | `docs/PLAN-fitness-app.md` |
-| `/kehoach add dark mode feature` | `docs/PLAN-dark-mode.md` |
-| `/kehoach fix authentication bug` | `docs/PLAN-auth-fix.md` |
-| `/kehoach SaaS dashboard` | `docs/PLAN-saas-dashboard.md` |
+| `/csp-plan e-commerce site with cart` | `docs/PLAN-ecommerce-cart.md` |
+| `/csp-plan mobile app for fitness` | `docs/PLAN-fitness-app.md` |
+| `/csp-plan add dark mode feature` | `docs/PLAN-dark-mode.md` |
+| `/csp-plan fix authentication bug` | `docs/PLAN-auth-fix.md` |
+| `/csp-plan SaaS dashboard` | `docs/PLAN-saas-dashboard.md` |

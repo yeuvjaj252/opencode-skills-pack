@@ -5,9 +5,9 @@ Tất cả các thay đổi nổi bật của pack sẽ được ghi lại tại
 ## [1.0.0] - 2026-02-24
 
 ### Added
-- Agent `kehoach`: Planning-only agent chỉ phân tích, không sửa file
+- Agent `csp-plan`: Planning-only agent chỉ phân tích, không sửa file
 - Agent `cook`: Implementation agent thực thi thay đổi
-- Command `/kehoach`: Lập kế hoạch phân tích cho task
+- Command `/csp-plan`: Lập kế hoạch phân tích cho task
 - Command `/cook`: Thực thi task theo kế hoạch
 - Skill `plan-writing`: Hướng dẫn cấu trúc kế hoạch
 - Skill `coding-standard`: Coding standards cho TypeScript/JavaScript, Python, Go, Rust
@@ -26,7 +26,7 @@ Tất cả các thay đổi nổi bật của pack sẽ được ghi lại tại
 
 ### Usage
 ```bash
-/kehoach <task>  # Lập kế hoạch
+/csp-plan <task>  # Lập kế hoạch
 /cook <task>     # Thực thi
 ```
 
@@ -47,6 +47,6 @@ Tất cả các thay đổi nổi bật của pack sẽ được ghi lại tại
 ### Planned
 - [ ] Thêm nhiều skills (refactor, debug, security-audit)
 - [ ] Hỗ trợ config qua opencode.json
-- [ ] Thêm command `/kehoach-tu-file` để đọc kế hoạch từ file
+- [ ] Thêm command `/csp-plan-tu-file` để đọc kế hoạch từ file
 - [ ] Thêm pre-commit hooks cho linting
 - [ ] Thêm telemetry cho usage tracking (opt-in)

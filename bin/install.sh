@@ -2,7 +2,7 @@
 
 set -e
 
-PACK_NAME="opencode-kehoach-cook-pack"
+PACK_NAME="opencode-csp-plan-cook-pack"
 PACK_VERSION="1.0.0"
 MANIFEST_FILE=".opencode/.${PACK_NAME}.manifest"
 
@@ -28,7 +28,7 @@ show_usage() {
     cat << EOF
 Usage: $0 [OPTIONS]
 
-Install OpenCode Kehoach Cook Pack
+Install OpenCode CSP-Plan Cook Pack
 
 OPTIONS:
     -p, --path PATH    Target project path (default: current directory)
@@ -219,11 +219,11 @@ log_info "============================================"
 log_info "Installation complete!"
 log_info ""
 log_info "Available commands:"
-log_info "  /kehoach <task>  - Lap ke hoach phan tich"
+log_info "  /csp-plan <task>  - Lap ke hoach phan tich"
 log_info "  /cook <task>    - Thuc thi task"
 log_info ""
 log_info "Available agents:"
-log_info "  kehoach (Tab -> chon)"
+log_info "  csp-plan (Tab -> chon)"
 log_info "  cook (Tab -> chon)"
 log_info ""
 log_info "Available skills:"

@@ -1,6 +1,6 @@
 ---
 description: Debugging command - Activates DEBUG mode for systematic problem investigation
-agent: kehoach
+agent: csp-plan
 ---
 
 # /csp-debug - Debug Mode

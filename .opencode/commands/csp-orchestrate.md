@@ -1,6 +1,6 @@
 ---
 description: Phoi hop nhieu agent cho task phuc tap - Use cho multi-perspective analysis, comprehensive reviews, hoac tasks can nhieu domain expertise
-agent: kehoach
+agent: csp-plan
 subtask: true
 ---
 
@@ -29,7 +29,7 @@ $ARGUMENTS
 | **API** | backend-specialist, security-auditor, test-engineer |
 | **UI/Design** | frontend-specialist, seo-specialist, performance-optimizer |
 | **Database** | database-architect, backend-specialist, security-auditor |
-| **Full Stack** | kehoach, frontend-specialist, backend-specialist |
+| **Full Stack** | csp-plan, frontend-specialist, backend-specialist |
 | **Debug** | explorer (tim hiểu), cook (fix) |
 | **Security** | security-auditor, devops |
 
@@ -41,7 +41,7 @@ $ARGUMENTS
 
 | Step | Agent | Action |
 |------|-------|--------|
-| 1 | `kehoach` | Tạo docs/PLAN.md |
+| 1 | `csp-plan` | Tạo docs/PLAN.md |
 | 2 | `explore` | Khảo sát codebase nếu cần |
 
 > **KHÔNG CÓ AGENT KHÁC trong giai đoạn planning!**
@@ -74,7 +74,7 @@ Bạn có approve? (Y/N)
 
 | Agent | Domain | Use When |
 |-------|--------|----------|
-| `kehoach` | Planning | Task breakdown, PLAN.md |
+| `csp-plan` | Planning | Task breakdown, PLAN.md |
 | `explore` | Discovery | Codebase mapping |
 | `cook` | Implementation | Build, fix, refactor |
 
@@ -104,7 +104,7 @@ Xác định TẤT CẢ domains mà task này ảnh hưởng:
 
 **PHASE 1 (Planning):**
 ```
-Sử dụng agent kehoach để tạo PLAN.md
+Sử dụng agent csp-plan để tạo PLAN.md
 → DỪNG sau khi plan được tạo
 → HỎI user cho approval
 ```
@@ -141,7 +141,7 @@ npm test
 ### Agents Invoked (TỐI THIỂU 3)
 | # | Agent | Focus Area | Status |
 |---|-------|------------|--------|
-| 1 | kehoach | Task breakdown | ✅ |
+| 1 | csp-plan | Task breakdown | ✅ |
 | 2 | explore | Codebase discovery | ✅ |
 | 3 | cook | Implementation | ✅ |
 

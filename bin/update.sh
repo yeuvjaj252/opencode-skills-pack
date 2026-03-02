@@ -2,7 +2,7 @@
 
 set -e
 
-PACK_NAME="opencode-kehoach-cook-pack"
+PACK_NAME="opencode-csp-plan-cook-pack"
 MANIFEST_FILE=".opencode/.${PACK_NAME}.manifest"
 
 # Colors
@@ -32,7 +32,7 @@ show_usage() {
     cat << EOF
 Usage: $0 [OPTIONS]
 
-Update OpenCode Kehoach Cook Pack
+Update OpenCode CSP-Plan Cook Pack
 
 OPTIONS:
     -p, --path PATH    Target project path (default: current directory)

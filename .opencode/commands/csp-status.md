@@ -1,6 +1,6 @@
 ---
 description: Display agent and project status - Progress tracking and status board
-agent: kehoach
+agent: csp-plan
 ---
 
 # /csp-status - Show Status
@@ -67,7 +67,7 @@ Show current project và agent status.
 
 === Agent Status ===
 
-✅ kehoach → Completed
+✅ csp-plan → Completed
 ✅ cook → Completed
 🔄 explore → Running (60%)
 

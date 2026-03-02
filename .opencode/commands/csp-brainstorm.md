@@ -1,6 +1,6 @@
 ---
 description: Structured brainstorming - Explores multiple options before implementation
-agent: kehoach
+agent: csp-plan
 subtask: true
 ---
 

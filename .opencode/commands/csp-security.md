@@ -1,6 +1,6 @@
 ---
 description: Security auditor - vulnerability assessment and security best practices
-agent: kehoach
+agent: csp-plan
 ---
 
 # /csp-security - Security Auditor

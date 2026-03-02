@@ -1,10 +1,10 @@
 # OpenCode Kế Hoạch Cook Pack
 
-Bộ pack mở rộng cho OpenCode với 2 chế độ hoạt động chính: `/kehoach` (lập kế hoạch) và `/cook` (thực thi), cùng với nhiều commands chuyên biệt khác.
+Bộ pack mở rộng cho OpenCode với 2 chế độ hoạt động chính: `/csp-plan` (lập kế hoạch) và `/cook` (thực thi), cùng với nhiều commands chuyên biệt khác.
 
 ## Tính năng
 
-- **Agents**: `kehoach` (planning-only), `cook` (implementation), `explore` (discovery)
+- **Agents**: `csp-plan` (planning-only), `cook` (implementation), `explore` (discovery)
 - **Commands**: 21 commands chuyên biệt cho từng workflow
 - **Skills**: `plan-writing`, `coding-standard`, `test-strategy`
 
@@ -40,29 +40,29 @@ Lưu ý quan trọng:
 
 | Command | Mô Tả | Agent |
 |---------|-------|-------|
-| `/kehoach` | Lập kế hoạch phân tích - chỉ phân tích, không sửa file | kehoach |
+| `/csp-plan` | Lập kế hoạch phân tích - chỉ phân tích, không sửa file | csp-plan |
 | `/cook` | Thực thi task - implement và verify | cook |
 
 ### Commands Chuyên Biệt
 
 | Command | Mô Tả | Agent |
 |---------|-------|-------|
-| `/csp-orchestrate` | Phối hợp nhiều agent cho task phức tạp | kehoach |
+| `/csp-orchestrate` | Phối hợp nhiều agent cho task phức tạp | csp-plan |
 | `/csp-explore` | Khám phá codebase - hiểu cấu trúc project | explore |
 | `/csp-frontend` | Frontend architect - UI components, styling | cook |
 | `/csp-backend` | Backend architect - API, server-side logic | cook |
-| `/csp-database` | Database architect - schema, migrations | kehoach |
+| `/csp-database` | Database architect - schema, migrations | csp-plan |
 | `/csp-test` | Test generation and execution | cook |
-| `/csp-debug` | Debug mode - điều tra vấn đề | kehoach |
-| `/csp-security` | Security auditor - vulnerability assessment | kehoach |
+| `/csp-debug` | Debug mode - điều tra vấn đề | csp-plan |
+| `/csp-security` | Security auditor - vulnerability assessment | csp-plan |
 | `/csp-performance` | Performance optimizer | cook |
 | `/csp-devops` | DevOps engineer - CI/CD, Docker | cook |
 | `/csp-deploy` | Deployment command | cook |
-| `/csp-docs` | Documentation writer | kehoach |
+| `/csp-docs` | Documentation writer | csp-plan |
 | `/csp-ui` | UI/UX design | cook |
 | `/csp-mobile` | Mobile developer - React Native, Flutter | cook |
-| `/csp-status` | Hiển thị trạng thái project và agent | kehoach |
-| `/csp-brainstorm` | Brainstorming - khám phá nhiều options | kehoach |
+| `/csp-status` | Hiển thị trạng thái project và agent | csp-plan |
+| `/csp-brainstorm` | Brainstorming - khám phá nhiều options | csp-plan |
 | `/csp-preview` | Preview server management | cook |
 | `/csp-enhance` | Thêm/cập nhật features | cook |
 | `/csp-ui-ux-pro-max` | AI-powered design intelligence | cook |
@@ -73,7 +73,7 @@ Lưu ý quan trọng:
 
 ```bash
 # Lập kế hoạch
-/kehoach xây dựng hệ thống e-commerce
+/csp-plan xây dựng hệ thống e-commerce
 
 # Thực thi
 /cook thêm chức năng đăng nhập
@@ -98,7 +98,7 @@ Lưu ý quan trọng:
 
 Trong OpenCode TUI:
 - Sử dụng phím **Tab** để chuyển đổi giữa các agent
-- Hoặc sử dụng lệnh `/kehoach` và `/cook` trực tiếp
+- Hoặc sử dụng lệnh `/csp-plan` và `/cook` trực tiếp
 
 ## Cập nhật
 
@@ -130,11 +130,11 @@ opencode-skills-pack/
 │   │   ├── coding-standard/
 │   │   └── test-strategy/
 │   ├── agents/
-│   │   ├── kehoach.md
+│   │   ├── csp-plan.md
 │   │   ├── cook.md
 │   │   └── explore.md
 │   └── commands/
-│       ├── kehoach.md
+│       ├── csp-plan.md
 │       ├── cook.md
 │       ├── csp-orchestrate.md
 │       ├── csp-explore.md
@@ -191,7 +191,7 @@ Tạo file `opencode.json` trong project nếu cần thay đổi quyền:
 ```json
 {
   "agent": {
-    "kehoach": {
+    "csp-plan": {
       "permission": {
         "edit": "deny",
         "bash": "ask"

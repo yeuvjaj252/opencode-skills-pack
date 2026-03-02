@@ -1,6 +1,6 @@
 ---
 description: Database architect - schema design, migrations, optimization
-agent: kehoach
+agent: csp-plan
 ---
 
 # /csp-database - Database Architect
