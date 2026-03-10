@@ -118,7 +118,12 @@ if [ -d "$SKILLS_DIR" ]; then
                 if [ "$existing_target" != "$source_path" ]; then
                     updated+=("skills/$skill_name")
                 else
-                    log_info "  - $skill_name (up to date)"
+                    # Check if file content has changed using diff
+                    if ! diff -q "$source_path/SKILL.md" "$target_path/SKILL.md" >/dev/null 2>&1; then
+                        updated+=("skills/$skill_name")
+                    else
+                        log_info "  - $skill_name (up to date)"
+                    fi
                 fi
             else
                 added+=("skills/$skill_name")
@@ -142,7 +147,12 @@ if [ -d "$AGENTS_DIR" ]; then
                 if [ "$existing_target" != "$source_path" ]; then
                     updated+=("agents/$agent_name.md")
                 else
-                    log_info "  - $agent_name (up to date)"
+                    # Check if file content has changed
+                    if ! diff -q "$source_path" "$target_path" >/dev/null 2>&1; then
+                        updated+=("agents/$agent_name.md")
+                    else
+                        log_info "  - $agent_name (up to date)"
+                    fi
                 fi
             else
                 added+=("agents/$agent_name.md")
@@ -166,7 +176,12 @@ if [ -d "$COMMANDS_DIR" ]; then
                 if [ "$existing_target" != "$source_path" ]; then
                     updated+=("commands/$cmd_name.md")
                 else
-                    log_info "  - $cmd_name (up to date)"
+                    # Check if file content has changed
+                    if ! diff -q "$source_path" "$target_path" >/dev/null 2>&1; then
+                        updated+=("commands/$cmd_name.md")
+                    else
+                        log_info "  - $cmd_name (up to date)"
+                    fi
                 fi
             else
                 added+=("commands/$cmd_name.md")
