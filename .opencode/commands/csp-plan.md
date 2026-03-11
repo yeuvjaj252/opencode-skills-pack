@@ -12,15 +12,16 @@ $ARGUMENTS
 
 ## Instructions
 
-1. **Understand the request**: read carefully and ask clarifying questions if needed
-2. **Inspect the codebase**: identify current structure and relevant areas
-3. **Analyze and plan**:
+1. **Default workflow requirement**: always use MCP Serena tools whenever possible
+2. **Understand the request**: read carefully and ask clarifying questions if needed
+3. **Inspect the codebase**: identify current structure and relevant areas
+4. **Analyze and plan**:
    - propose concrete implementation steps
    - identify files likely to change
    - estimate effort and timeline
    - call out potential risks
-4. **Test strategy**: propose how to validate the changes
-5. **Output only plan**: do not perform any code or file changes
+5. **Test strategy**: propose how to validate the changes
+6. **Output only plan**: do not perform any code or file changes
 
 ## Output format
 
