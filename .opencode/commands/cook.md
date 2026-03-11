@@ -1,40 +1,40 @@
 ---
-description: Thuc thi task theo ke hoach - implement va verify
+description: Execute tasks based on approved plan - implement and verify
 agent: cook
 ---
 
-# Cook
+# /cook - Execute Task
 
 Task: $ARGUMENTS
 
-## Huong dan
+## Instructions
 
-1. **Hieu yeu cau**: Neu task chua ro, hoi nguoi dung truoc
-2. **Thuc hien thay doi**: 
-   - Thuc hien cac thay doi theo yeu cau
-   - Follow coding standards cua project
-   - Code nho gon, co y nghia
-3. **Verify**: 
-   - Chay lint neu co (npm run lint, ruff, golangci-lint...)
-   - Chay typecheck neu co (npm run typecheck, tsc --noEmit...)
-   - Chay test neu co (npm test, pytest...)
-4. **Bao cao**: 
-   - List cac file da thay doi
-   - Ket qua verify (pass/fail)
-   - Neu co fail, fix ngay
+1. **Understand requirements**: ask clarifying questions if needed
+2. **Implement changes**:
+   - apply requested updates
+   - follow project coding standards
+   - keep code concise and meaningful
+3. **Verify**:
+   - run lint when available
+   - run typecheck when available
+   - run tests when available
+4. **Report**:
+   - list changed files
+   - provide verification results
+   - fix failures before completion
 
 ## Output format
 
-```
-## Thay doi da thuc hien
-- `path/to/file1` - [Mo ta]
-- `path/to/file2` - [Mo ta]
+```markdown
+## Implemented Changes
+- `path/to/file1` - [description]
+- `path/to/file2` - [description]
 
-## Verify
+## Verification
 - Lint: [PASS/FAIL]
-- Typecheck: [PASS/FAIL]  
+- Typecheck: [PASS/FAIL]
 - Test: [PASS/FAIL]
 
-## Ghi chu
-[Neu co]
+## Notes
+[if any]
 ```

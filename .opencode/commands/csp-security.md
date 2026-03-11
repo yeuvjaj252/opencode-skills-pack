@@ -1,6 +1,6 @@
 ---
-description: Security auditor - vulnerability assessment and security best practices
-agent: csp-plan
+description: Security auditing workflow and practical hardening checklist
+agent: cook
 ---
 
 # /csp-security - Security Auditor
@@ -9,121 +9,34 @@ $ARGUMENTS
 
 ---
 
-## Security Audit Checklist
+## Security Checklist
 
 ### Authentication
-- [ ] Passwords hashed với bcrypt/argon2 (cost factor >= 10)
-- [ ] JWT secrets are strong và từ env vars
-- [ ] Session tokens are httpOnly, secure, sameSite
-- [ ] Password reset tokens expire quickly
-- [ ] Rate limiting on login attempts
-- [ ] MFA available cho sensitive accounts
+- [ ] strong password hashing (bcrypt/argon2)
+- [ ] strong secrets from environment variables
+- [ ] secure session/token settings
+- [ ] login rate limiting
 
 ### Authorization
-- [ ] Every protected route checks permissions
-- [ ] No privilege escalation possible
-- [ ] RBAC properly implemented
-- [ ] API endpoints verify user ownership
+- [ ] permission checks on every protected route
+- [ ] no privilege escalation paths
+- [ ] ownership checks where required
 
 ### Input Validation
-- [ ] All inputs validated server-side
-- [ ] SQL injection prevented (parameterized queries)
-- [ ] XSS prevented (output encoding)
-- [ ] File uploads validated (type, size, content)
-- [ ] Path traversal prevented
+- [ ] server-side validation for all input
+- [ ] SQL injection prevention
+- [ ] XSS prevention
+- [ ] upload/path traversal protections
 
 ### Data Protection
-- [ ] Sensitive data encrypted at rest
-- [ ] HTTPS enforced everywhere
-- [ ] No secrets in code or logs
-- [ ] PII handled according to regulations
-- [ ] Database backups encrypted
+- [ ] encryption in transit and at rest where required
+- [ ] no secrets in code/logs
+- [ ] production-safe configuration
 
-### Headers & Config
-- [ ] Security headers set (HSTS, CSP, X-Frame-Options)
-- [ ] CORS properly configured
-- [ ] Error messages don't leak info
-- [ ] Debug mode disabled in production
+## Deliverable
 
----
-
-## OWASP Top 10 Quick Check
-
-| Vulnerability | Check |
-|--------------|-------|
-| **Injection** | Parameterized queries used? |
-| **Broken Auth** | Strong session management? |
-| **Sensitive Data** | Encryption in transit/rest? |
-| **XXE** | XML parsing disabled/safe? |
-| **Broken Access** | Authorization on every route? |
-| **Misconfig** | Default creds removed? |
-| **XSS** | Output encoding used? |
-| **Insecure Deserialization** | User input not deserialized? |
-| **Vulnerable Components** | Dependencies updated? |
-| **Logging** | Security events logged? |
-
----
-
-## Common Vulnerabilities to Check
-
-### Code Patterns to Flag
-```javascript
-// 🔴 SQL Injection
-db.query(`SELECT * FROM users WHERE id = ${userId}`)
-
-// 🔴 XSS
-element.innerHTML = userInput
-
-// 🔴 Hardcoded Secret
-const API_KEY = "sk-1234567890"
-
-// 🔴 Missing Auth Check
-app.get('/admin/users', getUsers) // No middleware!
-
-// 🔴 Weak Crypto
-crypto.createHash('md5')
-```
-
-### Secure Alternatives
-```javascript
-// ✅ Parameterized Query
-db.query('SELECT * FROM users WHERE id = $1', [userId])
-
-// ✅ Safe Rendering
-element.textContent = userInput
-
-// ✅ Environment Variable
-const API_KEY = process.env.API_KEY
-
-// ✅ Auth Middleware
-app.get('/admin/users', requireAdmin, getUsers)
-
-// ✅ Strong Crypto
-crypto.createHash('sha256')
-```
-
----
-
-## Output Format
-
-```markdown
-## 🔒 Security Audit Report
-
-### Scope
-[What was audited]
-
-### Critical Issues 🔴
-1. [Issue] - [Location] - [Fix]
-
-### High Issues 🟠
-1. [Issue] - [Location] - [Fix]
-
-### Medium Issues 🟡
-1. [Issue] - [Location] - [Fix]
-
-### Recommendations
-1. [Recommendation]
-
-### Summary
-[Overall security posture]
-```
+Return a prioritized report:
+- critical issues
+- high issues
+- medium issues
+- recommended fixes

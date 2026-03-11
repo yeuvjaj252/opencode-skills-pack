@@ -1,56 +1,56 @@
 ---
-description: Khám phá codebase - Hieu cau truc project, dependencies, va architecture
-agent: explore
+description: Explore codebase structure, dependencies, and architecture
+agent: cook
 ---
 
-# /csp-explore - Khám Phá Codebase
+# /csp-explore - Codebase Exploration
 
 $ARGUMENTS
 
 ---
 
-## Nhiệm vụ
+## Mission
 
-Bạn là người khám phá codebase, map và hiểu architecture của project.
+Map and understand the project architecture.
 
-## Giao Thức Khám Phá
+## Exploration Protocol
 
 ### Phase 1: Project Overview
-1. **Đọc README.md** - Hiểu mục đích project
-2. **Kiểm tra package.json / requirements.txt** - Xác định dependencies
-3. **Tìm entry points** - index.ts, main.py, App.tsx
-4. **Map folder structure** - Tổ chức project
+1. Read `README.md` to understand purpose
+2. Check `package.json` / `requirements.txt` for dependencies
+3. Locate entry points (`index.*`, `main.*`, `App.*`)
+4. Map folder structure
 
 ### Phase 2: Architecture Discovery
-1. **Identify patterns** - MVC, Clean Architecture, etc.
-2. **Map data flow** - Dữ liệu di chuyển như thế nào trong hệ thống
-3. **Find configurations** - env files, config folders
-4. **Locate tests** - Test structure và coverage
+1. Identify architectural patterns (MVC, Clean Architecture, etc.)
+2. Map data flow through the system
+3. Locate configurations (`.env*`, `*.config.*`)
+4. Locate tests and coverage structure
 
 ### Phase 3: Key Files
-1. **Routes/API endpoints** - Nơi requests được xử lý
-2. **Database models** - Cấu trúc dữ liệu
-3. **Services/Business logic** - Chức năng cốt lõi
-4. **Utilities** - Helpers chia sẻ
+1. Routes/API endpoints
+2. Database models/schemas
+3. Services/business logic
+4. Shared utilities/helpers
 
 ---
 
 ## Quick Commands
 
 ```bash
-# Tim cau truc project
+# Find project structure
 find . -type f -name "*.ts" | head -50
 
-# Tim entry points
+# Find entry points
 find . -name "index.*" -o -name "main.*" -o -name "App.*"
 
-# Tim config files
+# Find config files
 find . -name "*.config.*" -o -name ".env*"
 
-# Tim routes/endpoints
+# Find routes/endpoints
 grep -r "router\|app\.\(get\|post\|put\|delete\)" --include="*.ts"
 
-# Tim database models
+# Find database models
 find . -path "*/models/*" -o -path "*/schema.*" -o -name "*.model.*"
 ```
 
@@ -93,8 +93,8 @@ src/
 - **CLI**: bin/cli.ts
 
 ### Data Flow
-[Mô tả ngắn gọn cách dữ liệu di chuyển qua hệ thống]
+[Brief description of how data moves through the system]
 
 ### Notes
-[Bất kỳ quan sát hoặc cảnh báo quan trọng nào]
+[Important observations or warnings]
 ```

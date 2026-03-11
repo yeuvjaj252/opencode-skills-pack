@@ -1,57 +1,58 @@
 ---
-description: Lap ke hoach phan tich cho task - chi phan tich, khong sua file
-agent: csp-plan
+description: Project planning analysis for tasks - analysis only, no file edits
+agent: cook
 subtask: true
 ---
 
-# /csp-plan - Lap Ke Hoach Du An
+# /csp-plan - Project Planning
 
 $ARGUMENTS
 
 ---
 
-## Huong dan
+## Instructions
 
-1. **Hieu yeu cau**: Doc kỹ task va hoi neu khong ro
-2. **Khao sat code**: Tim hieu cau truc project hien tai lien quan den task
-3. **Phan tich**: 
-   - De xuat cac buoc thuc hien cu the
-   - Xac dinh cac file can thay doi
-   - Danh gia effort va thoi gian
-   - Xac dinh risk co the xay ra
-4. **Test strategy**: De xuat cach test cho cac thay doi
-5. **Ket qua**: Tra ve ke hoach chi tiet MA KHONG thuc hien bat ky thay doi nao
+1. **Understand the request**: read carefully and ask clarifying questions if needed
+2. **Inspect the codebase**: identify current structure and relevant areas
+3. **Analyze and plan**:
+   - propose concrete implementation steps
+   - identify files likely to change
+   - estimate effort and timeline
+   - call out potential risks
+4. **Test strategy**: propose how to validate the changes
+5. **Output only plan**: do not perform any code or file changes
 
 ## Output format
 
-Tra ve ket qua theo format sau:
-```
-## Phan tich
-[Mo ta ngan gon ve task]
+Return results in this format:
 
-## Cac buoc thuc hien
-1. [Buoc 1]
-2. [Buoc 2]
+```markdown
+## Analysis
+[Short summary of the task]
+
+## Implementation Steps
+1. [Step 1]
+2. [Step 2]
 ...
 
-## File can thay doi
+## Candidate Files
 - `path/to/file1`
 - `path/to/file2`
 
-## Risk
+## Risks
 - [Risk 1]
 - [Risk 2]
 
-## Test strategy
-[Cach test cac thay doi]
+## Test Strategy
+[How to test and verify]
 
 ## Effort
-[Uoc tinh effort: Small/Medium/Large]
+[Small / Medium / Large]
 ```
 
 ---
 
-## Vi Du Dat Ten File Plan
+## Plan File Naming Examples
 
 | Request | Plan File |
 |---------|-----------|

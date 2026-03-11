@@ -1,6 +1,6 @@
 ---
 description: Documentation writer - README, API docs, code documentation
-agent: csp-plan
+agent: cook
 ---
 
 # /csp-docs - Documentation Writer

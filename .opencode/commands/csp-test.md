@@ -1,5 +1,5 @@
 ---
-description: Test generation and test running - Creates and executes tests for code
+description: Generate and execute tests for files, features, and flows
 agent: cook
 ---
 
@@ -11,135 +11,43 @@ $ARGUMENTS
 
 ## Purpose
 
-Command này generates tests, runs existing tests, hoặc checks test coverage.
-
----
+Generate tests, run existing tests, and report test quality.
 
 ## Sub-commands
 
-```
-/csp-test                - Run all tests
-/csp-test [file/feature] - Generate tests for specific target
-/csp-test coverage       - Show test coverage report
-/csp-test watch          - Run tests in watch mode
+```text
+/csp-test                # run all tests
+/csp-test [target]       # generate tests for file/feature
+/csp-test coverage       # show coverage report
+/csp-test watch          # run in watch mode
 ```
 
 ---
 
 ## Behavior
 
-### Generate Tests
-
-Khi được yêu cầu test một file hoặc feature:
-
-1. **Analyze the code**
-   - Identify functions và methods
-   - Find edge cases
-   - Detect dependencies to mock
-
-2. **Generate test cases**
-   - Happy path tests
-   - Error cases
-   - Edge cases
-   - Integration tests (nếu cần)
-
-3. **Write tests**
-   - Dùng project's test framework (Jest, Vitest, etc.)
-   - Follow existing test patterns
-   - Mock external dependencies
+1. Analyze target behavior and edge cases
+2. Generate tests following project conventions
+3. Mock external dependencies where appropriate
+4. Execute test suite and report outcomes clearly
 
 ---
 
 ## Output Format
 
-### For Test Generation
-
 ```markdown
-## 🧪 Tests: [Target]
+## Tests: [Target]
 
 ### Test Plan
 | Test Case | Type | Coverage |
 |-----------|------|----------|
-| Should create user | Unit | Happy path |
-| Should reject invalid email | Unit | Validation |
-| Should handle db error | Unit | Error case |
+| ... | ... | ... |
 
-### Generated Tests
+### Generated Files
+- tests/[file].test.ts
 
-`tests/[file].test.ts`
-
-[Code block with tests]
-
----
-
-Run with: `npm test`
+### Execution Result
+- Passed: X
+- Failed: Y
+- Notes: ...
 ```
-
-### For Test Execution
-
-```
-🧪 Running tests...
-
-✅ auth.test.ts (5 passed)
-✅ user.test.ts (8 passed)
-❌ order.test.ts (2 passed, 1 failed)
-
-Failed:
-  ✗ should calculate total with discount
-    Expected: 90
-    Received: 100
-
-Total: 15 tests (14 passed, 1 failed)
-```
-
----
-
-## Examples
-
-```
-/csp-test src/services/auth.service.ts
-/csp-test user registration flow
-/csp-test coverage
-/csp-test fix failed tests
-```
-
----
-
-## Test Patterns
-
-### Unit Test Structure
-
-```typescript
-describe('AuthService', () => {
-  describe('login', () => {
-    it('should return token for valid credentials', async () => {
-      // Arrange
-      const credentials = { email: 'test@test.com', password: 'pass123' };
-      
-      // Act
-      const result = await authService.login(credentials);
-      
-      // Assert
-      expect(result.token).toBeDefined();
-    });
-
-    it('should throw for invalid password', async () => {
-      // Arrange
-      const credentials = { email: 'test@test.com', password: 'wrong' };
-      
-      // Act & Assert
-      await expect(authService.login(credentials)).rejects.toThrow('Invalid credentials');
-    });
-  });
-});
-```
-
----
-
-## Key Principles
-
-- **Test behavior not implementation**
-- **One assertion per test** (when practical)
-- **Descriptive test names**
-- **Arrange-Act-Assert pattern**
-- **Mock external dependencies**

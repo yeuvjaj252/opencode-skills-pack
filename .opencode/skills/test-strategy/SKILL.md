@@ -6,122 +6,52 @@ compatibility: opencode
 
 # Test Strategy Skill
 
-Su dung cac nguyen tac sau de viet test hieu qua.
+Use this skill to design effective and maintainable tests.
 
 ## Testing Pyramid
 
-```
-       /\
-      /  \     E2E (it)
-     /----\    Integration (vua)
-    /      \   Unit (nhieu)
-   /________\
-```
+- Unit tests: many, fast, focused
+- Integration tests: moderate, boundary behavior
+- E2E tests: few, critical user flows
 
-## Unit Test
+## Unit Testing Principles
 
-### Nguyen tac
-- Test 1 function/unit
+- Test one unit at a time
 - Mock external dependencies
-- AAA pattern: Arrange, Act, Assert
-- Ten ro nghia: `describe('functionName', ...)`
+- Follow Arrange → Act → Assert
+- Use descriptive test names
 
-### Example
+## Integration Testing Principles
 
-```typescript
-describe('calculateTotal', () => {
-  it('tinh tong don hang dung', () => {
-    // Arrange
-    const items = [{ price: 100, qty: 2 }];
-    
-    // Act
-    const result = calculateTotal(items);
-    
-    // Assert
-    expect(result).toBe(200);
-  });
-  
-  it('tra ve 0 khi khong co item', () => {
-    expect(calculateTotal([])).toBe(0);
-  });
-});
-```
+- Validate interaction between components
+- Prefer realistic test data
+- Ensure cleanup/isolation per test
 
-## Integration Test
+## E2E Testing Principles
 
-### Nguyen tac
-- Test nhieu unit hoat dong cung nhau
-- Test voi real database (hoac test DB)
-- Cleanup sau moi test
-- Define test data rõ ràng
+- Cover only high-value user journeys
+- Use real runtime/browser when possible
+- Keep E2E suite lean and stable
 
-## E2E Test
+## Coverage Guidance
 
-### Nguyen tac
-- Test flow hoan chinh
-- Use real browser/server
-- Run it nhat, vi cham va ton kem
-- Focus vao critical path
+- Typical target: 70–80% overall
+- Prioritize business logic, edge cases, and error handling
+- Avoid wasting effort on boilerplate/generated code
 
-## Test Coverage
+## Mocking Guidance
 
-- Target: 70-80% coverage
-- Focus vao:
-  - Business logic
-  - Edge cases
-  - Error handling
-- Khong can test:
-  - Boilerplate
-  - Simple getters/setters
-  - Generated code
-
-## Test Naming
-
-Su dung format:
-```
-[Method]_[Scenario]_[ExpectedResult]
-```
-
-Vi du:
-- `it('adds two numbers correctly')`
-- `it('throws error when input is invalid')`
-- `describe('when user is logged in')`
-
-## Mocking Guidelines
-
-### Mock khi:
-- External API call
-- Database operations
+Mock when dealing with:
+- External APIs
+- Databases
 - File system
-- Time/Date
-- Random numbers
+- Time/randomness
 
-### Khong Mock khi:
-- Business logic dang test
-- Simple functions
-- Config values
+Avoid mocking core business logic under test.
 
-## Running Tests
+## Verification Before Commit
 
-```bash
-# All tests
-npm test
-
-# Watch mode
-npm test -- --watch
-
-# Coverage
-npm test -- --coverage
-
-# Specific file
-npm test -- path/to/test.spec.ts
-```
-
-## Verification Checklist
-
-Truoc khi commit:
-- [ ] All tests pass
-- [ ] Coverage meets target
-- [ ] No console.log/debugger
-- [ ] No skipped tests (except temporarily)
-- [ ] Test code reviewed
+- All tests pass
+- Coverage is acceptable for scope
+- No skipped tests without reason
+- No debug leftovers (`console.log`, `debugger`)

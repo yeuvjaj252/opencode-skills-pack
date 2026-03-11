@@ -169,12 +169,15 @@ if [ -d "$SKILLS_DIR" ]; then
 fi
 
 # Install agents
-log_info "Installing agents..."
+log_info "Installing agents (usability-first)..."
 AGENTS_DIR="$PACK_DIR/.opencode/agents"
 if [ -d "$AGENTS_DIR" ]; then
     for agent_file in "$AGENTS_DIR"/*.md; do
         if [ -f "$agent_file" ]; then
             agent_name=$(basename "$agent_file" .md)
+            if [ "$agent_name" != "cook" ]; then
+                continue
+            fi
             source_path="$agent_file"
             target_path="$OPENCODE_DIR/agents/$agent_name.md"
             relative_path="agents/$agent_name.md"
@@ -223,8 +226,7 @@ log_info "  /csp-plan <task>  - Lap ke hoach phan tich"
 log_info "  /cook <task>    - Thuc thi task"
 log_info ""
 log_info "Available agents:"
-log_info "  csp-plan (Tab -> chon)"
-log_info "  cook (Tab -> chon)"
+log_info "  cook (Tab -> chọn)"
 log_info ""
 log_info "Available skills:"
 log_info "  plan-writing"

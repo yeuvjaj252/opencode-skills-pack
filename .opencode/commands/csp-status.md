@@ -1,87 +1,43 @@
 ---
-description: Display agent and project status - Progress tracking and status board
-agent: csp-plan
+description: Show current project and workflow status
+agent: cook
 ---
 
-# /csp-status - Show Status
+# /csp-status - Project Status
 
 $ARGUMENTS
 
 ---
 
-## Task
+## Purpose
 
-Show current project và agent status.
+Display a concise status report for the current workspace.
 
-### What It Shows
+## What to report
 
-1. **Project Info**
-   - Project name and path
-   - Tech stack
-   - Current features
+- Project metadata (name, stack when detectable)
+- Git status (branch, changed files, staged files)
+- Active workflow context (planning / implementation)
+- Optional preview/server status if available
 
-2. **Agent Status Board**
-   - Which agents are running
-   - Which tasks are completed
-   - Pending work
+## Suggested checks
 
-3. **File Statistics**
-   - Files created count
-   - Files modified count
-
-4. **Preview Status**
-   - Is server running
-   - URL
-   - Health check
-
----
-
-## Example Output
-
-```
-=== Project Status ===
-
-📁 Project: my-ecommerce
-📂 Path: /projects/my-ecommerce
-🏷️ Type: nextjs-ecommerce
-📊 Status: active
-
-🔧 Tech Stack:
-   Framework: next.js
-   Database: postgresql
-   Auth: clerk
-   Payment: stripe
-
-✅ Features (5):
-   • product-listing
-   • cart
-   • checkout
-   • user-auth
-   • order-history
-
-⏳ Pending (2):
-   • admin-panel
-   • email-notifications
-
-📄 Files: 73 created, 12 modified
-
-=== Agent Status ===
-
-✅ csp-plan → Completed
-✅ cook → Completed
-🔄 explore → Running (60%)
-
-=== Preview ===
-
-🌐 URL: http://localhost:3000
-💚 Health: OK
+```bash
+ls -la
+git status
 ```
 
----
+If a local health endpoint exists, check it as optional context.
 
-## Technical
+## Output format
 
-Để hiển thị status, chạy các lệnh:
-- Kiểm tra project info: `ls -la`, `cat package.json`
-- Kiểm tra git status: `git status`
-- Kiểm tra server: `curl -f http://localhost:3000/health`
+```markdown
+## Project Status
+
+- Project: ...
+- Branch: ...
+- Working tree: clean/dirty
+- Changed files: ...
+- Mode: planning/implementation
+- Preview: running/not running/unknown
+```

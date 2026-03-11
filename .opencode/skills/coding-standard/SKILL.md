@@ -6,97 +6,61 @@ compatibility: opencode
 
 # Coding Standard Skill
 
-Follow cac nguyen tac coding standard sau de dam bao code chat luong cao.
+Follow these standards to keep code maintainable and consistent.
 
-## Nguyen tac Chung
+## Core Principles
 
-1. **DRY** - Don't Repeat Yourself
-2. **KISS** - Keep It Simple, Stupid
-3. **YAGNI** - You Aren't Gonna Need It
-4. **SOLID** - Cho OOP
-5. **Clean Code** - Ten bien ro nghia, ham nho gon, comment khi can thiet
+1. DRY — Don't Repeat Yourself
+2. KISS — Keep It Simple
+3. YAGNI — Avoid speculative code
+4. SOLID — For object-oriented design when applicable
+5. Clean Code — Meaningful names, focused functions, minimal comments
 
-## TypeScript/JavaScript
+## TypeScript / JavaScript
 
 ### Naming
-- Bien/ham: camelCase (`userName`, `getData`)
-- Class/interface: PascalCase (`UserService`, `IUser`)
-- Constant: UPPER_SNAKE_CASE
-- File: kebab-case hoac PascalCase tuy loai
+- Variables/functions: `camelCase`
+- Classes/interfaces/types: `PascalCase`
+- Constants: `UPPER_SNAKE_CASE`
+- Files: `kebab-case` (or framework-conventional casing)
 
 ### Functions
-- Ham nho hon 20 dong
-- Chi lam 1 viec
-- Dung async/await thay vi callback
-- Dung try-catch cho async
-
-### Example
-
-```typescript
-// TOT
-async function getUserById(id: string): Promise<User | null> {
-  try {
-    return await db.users.findOne({ id });
-  } catch (error) {
-    logger.error('getUserById', error);
-    return null;
-  }
-
-// SAI
-function getUser(id) {
-  // 50 dong code, vua query vua validate vua transform
-}
-```
+- Prefer small, focused functions
+- One responsibility per function
+- Prefer `async/await` over callback chains
+- Use structured error handling
 
 ## Python
 
-### Naming
-- Function/variable: snake_case (`get_user`, `user_list`)
-- Class: PascalCase (`UserService`)
-- Constant: UPPER_SNAKE_CASE
-
-### Style
 - Follow PEP 8
-- Type hints cho function
-- Docstring cho class/function public
+- Use type hints on public functions
+- Add docstrings for public classes/functions
+- Use `snake_case` for variables/functions and `PascalCase` for classes
 
 ## Go
 
-### Naming
-- CamelCase cho bien/ham
-- PascalCase cho export
-- Ten file: snake_case
-
-### Style
-- Error handling ngay lap tuc
-- Context cho async operations
-- Interface nho, ro
+- Keep interfaces small and purposeful
+- Handle errors explicitly and early
+- Use context for request-scoped operations
 
 ## Rust
 
-### Naming
-- snake_case cho bien/ham
-- PascalCase cho struct/enum
-- Tên file: snake_case
+- Use idiomatic Result-based error handling
+- Keep naming idiomatic (`snake_case`, `PascalCase`)
+- Add unit tests with `#[test]`
 
-### Style
-- Use Result cho error handling
-- Follow Rust idiom
-- Write tests with #[test]
+## Verification Checklist
 
-## Verification
+After coding:
+1. Run lint
+2. Run type checks
+3. Run tests
+4. Perform a final self-review
 
-Sau khi code, tu dong:
-1. Chay lint (eslint, ruff, golangci-lint, clippy)
-2. Chay typecheck (tsc --noEmit, mypy)
-3. Chay test
-4. Review code lan cuoi
+## Anti-Patterns to Avoid
 
-## Anti-patterns
-
-Tranh cac:
-- Magic numbers -> Dung constant
-- Long functions -> Tach thanh function nho
-- Deep nesting -> Early return
-- Global state -> Dependency injection
-- Hardcoding -> Config/ENV
+- Magic numbers without constants
+- Overly long functions
+- Deep nesting instead of early returns
+- Hidden global state
+- Hardcoded secrets/config

@@ -1,12 +1,12 @@
 # OpenCode Kế Hoạch Cook Pack
 
-Bộ pack mở rộng cho OpenCode với 2 chế độ hoạt động chính: `/csp-plan` (lập kế hoạch) và `/cook` (thực thi), cùng với nhiều commands chuyên biệt khác.
+Bộ pack mở rộng cho OpenCode theo hướng **usability-first**: dùng 1 agent chính (`cook`) cho toàn bộ command, giảm nhu cầu chuyển tab nhưng vẫn giữ workflow chuyên biệt theo từng lệnh.
 
 ## Tính năng
 
-- **Agents**: `csp-plan` (planning-only), `cook` (implementation), `explore` (discovery)
-- **Commands**: 21 commands chuyên biệt cho từng workflow
-- **Skills**: `plan-writing`, `coding-standard`, `test-strategy`
+- **Agents**: `cook` (primary, single-agent workflow)
+- **Commands**: 22 commands chuyên biệt cho từng workflow
+- **Skills**: `plan-writing`, `coding-standard`, `test-strategy`, `github-tools`
 
 ## Cài đặt
 
@@ -40,32 +40,33 @@ Lưu ý quan trọng:
 
 | Command | Mô Tả | Agent |
 |---------|-------|-------|
-| `/csp-plan` | Lập kế hoạch phân tích - chỉ phân tích, không sửa file | csp-plan |
+| `/csp-plan` | Lập kế hoạch phân tích - chỉ phân tích, không sửa file | cook |
 | `/cook` | Thực thi task - implement và verify | cook |
 
 ### Commands Chuyên Biệt
 
 | Command | Mô Tả | Agent |
 |---------|-------|-------|
-| `/csp-orchestrate` | Phối hợp nhiều agent cho task phức tạp | csp-plan |
-| `/csp-explore` | Khám phá codebase - hiểu cấu trúc project | explore |
+| `/csp-orchestrate` | Phối hợp nhiều agent cho task phức tạp | cook |
+| `/csp-explore` | Khám phá codebase - hiểu cấu trúc project | cook |
 | `/csp-frontend` | Frontend architect - UI components, styling | cook |
 | `/csp-backend` | Backend architect - API, server-side logic | cook |
-| `/csp-database` | Database architect - schema, migrations | csp-plan |
+| `/csp-database` | Database architect - schema, migrations | cook |
 | `/csp-test` | Test generation and execution | cook |
-| `/csp-debug` | Debug mode - điều tra vấn đề | csp-plan |
-| `/csp-security` | Security auditor - vulnerability assessment | csp-plan |
+| `/csp-debug` | Debug mode - điều tra vấn đề | cook |
+| `/csp-security` | Security auditor - vulnerability assessment | cook |
 | `/csp-performance` | Performance optimizer | cook |
 | `/csp-devops` | DevOps engineer - CI/CD, Docker | cook |
 | `/csp-deploy` | Deployment command | cook |
-| `/csp-docs` | Documentation writer | csp-plan |
+| `/csp-docs` | Documentation writer | cook |
 | `/csp-ui` | UI/UX design | cook |
 | `/csp-mobile` | Mobile developer - React Native, Flutter | cook |
-| `/csp-status` | Hiển thị trạng thái project và agent | csp-plan |
-| `/csp-brainstorm` | Brainstorming - khám phá nhiều options | csp-plan |
+| `/csp-status` | Hiển thị trạng thái project và agent | cook |
+| `/csp-brainstorm` | Brainstorming - khám phá nhiều options | cook |
 | `/csp-preview` | Preview server management | cook |
 | `/csp-enhance` | Thêm/cập nhật features | cook |
 | `/csp-ui-ux-pro-max` | AI-powered design intelligence | cook |
+| `/csp-github` | GitHub workflow: commit, PR, issue operations | cook |
 
 ## Sử Dụng
 
@@ -97,8 +98,8 @@ Lưu ý quan trọng:
 ### Chuyển đổi giữa chế độ
 
 Trong OpenCode TUI:
-- Sử dụng phím **Tab** để chuyển đổi giữa các agent
-- Hoặc sử dụng lệnh `/csp-plan` và `/cook` trực tiếp
+- Chỉ cần dùng agent `cook` (mặc định)
+- Ưu tiên dùng command (`/csp-*`) để chuyển ngữ cảnh task thay vì đổi agent bằng Tab
 
 ## Cập nhật
 
@@ -130,9 +131,7 @@ opencode-skills-pack/
 │   │   ├── coding-standard/
 │   │   └── test-strategy/
 │   ├── agents/
-│   │   ├── csp-plan.md
-│   │   ├── cook.md
-│   │   └── explore.md
+│   │   └── cook.md
 │   └── commands/
 │       ├── csp-plan.md
 │       ├── cook.md
@@ -154,7 +153,8 @@ opencode-skills-pack/
 │       ├── csp-brainstorm.md
 │       ├── csp-preview.md
 │       ├── csp-enhance.md
-│       └── csp-ui-ux-pro-max.md
+│       ├── csp-ui-ux-pro-max.md
+│       └── csp-github.md
 ├── bin/
 │   ├── install.sh
 │   ├── uninstall.sh
@@ -191,7 +191,7 @@ Tạo file `opencode.json` trong project nếu cần thay đổi quyền:
 ```json
 {
   "agent": {
-    "csp-plan": {
+    "cook": {
       "permission": {
         "edit": "deny",
         "bash": "ask"
