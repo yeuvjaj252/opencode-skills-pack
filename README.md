@@ -6,7 +6,7 @@ Bộ pack mở rộng cho OpenCode theo hướng **usability-first**: dùng 1 ag
 
 - **Agents**: `cook` (primary, single-agent workflow)
 - **Commands**: 22 commands chuyên biệt cho từng workflow
-- **Skills**: `plan-writing`, `coding-standard`, `test-strategy`, `github-tools`, `prompt-leverage`
+- **Skills**: 50 skills (full migration từ claude-skills-pack)
 
 ## 📥 Cài đặt
 
@@ -96,6 +96,109 @@ Skill này không phải command chính mà là utility skill để các command
 | `/csp-enhance` | ✨ Thêm/cập nhật features | cook |
 | `/csp-ui-ux-pro-max` | 🎯 AI-powered design intelligence | cook |
 | `/csp-github` | 🐙 GitHub workflow: commit, PR, issue operations | cook |
+
+## 📚 Skills Catalog
+
+### Core Development (16 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `api-patterns` | API design patterns (REST, GraphQL, tRPC) |
+| `architecture` | Architecture decision framework & ADR |
+| `clean-code` | Clean code principles & refactoring |
+| `code-review-checklist` | Code review guidelines |
+| `coding-standard` | Coding standards & best practices |
+| `database-design` | Schema design, migrations, ORM |
+| `documentation-templates` | Documentation templates |
+| `frontend-design` | Frontend design thinking |
+| `mcp-builder` | MCP server building |
+| `nextjs-best-practices` | Next.js App Router patterns |
+| `nextjs-react-expert` | React/Next.js performance |
+| `nodejs-best-practices` | Node.js patterns |
+| `react-patterns` | Modern React patterns |
+| `tailwind-patterns` | Tailwind CSS patterns |
+| `testing-patterns` | Testing strategies |
+| `typescript-expert` | TypeScript patterns |
+
+### DevOps & Infrastructure (6 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `bash-linux` | Bash/Linux terminal patterns |
+| `cloudflare-expert` | Cloudflare Workers, Pages, KV, D1 |
+| `deployment-procedures` | Safe deployment workflows |
+| `docker-expert` | Docker containerization |
+| `server-management` | Server management & monitoring |
+| `powershell-windows` | PowerShell patterns |
+
+### Specialized Frameworks (6 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `nestjs-expert` | Nest.js framework |
+| `prisma-expert` | Prisma ORM |
+| `vue-expert` | Vue 3 & Nuxt.js |
+| `python-patterns` | Python development |
+| `rust-pro` | Rust systems programming |
+| `mobile-design` | Mobile-first design |
+
+### Security & Quality (5 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `lint-and-validate` | Linting & static analysis |
+| `systematic-debugging` | Debug methodology |
+| `vulnerability-scanner` | Vulnerability analysis |
+| `red-team-tactics` | Red team tactics |
+| `geo-fundamentals` | Generative Engine Optimization |
+
+### Workflow & Process (6 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `brainstorming` | Socratic questioning protocol |
+| `behavioral-modes` | AI operational modes |
+| `tdd-workflow` | Test-Driven Development |
+| `parallel-agents` | Multi-agent orchestration |
+| `intelligent-routing` | Automatic agent selection |
+| `performance-profiling` | Performance analysis |
+
+### Design & UX (3 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `ui-ux-pro-max` | UI/UX design intelligence |
+| `frontend-design` | Web UI design |
+| `mobile-design` | Mobile app design |
+
+### Game Development (10 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `game-development` | Game dev orchestrator |
+| `2d-games` | 2D game development |
+| `3d-games` | 3D game development |
+| `web-games` | Web browser games |
+| `mobile-games` | Mobile games |
+| `pc-games` | PC & console games |
+| `vr-ar` | VR/AR development |
+| `game-design` | Game design principles |
+| `game-art` | Game art & animation |
+| `game-audio` | Game audio |
+| `multiplayer` | Multiplayer networking |
+
+### Utilities (5 skills)
+
+| Skill | Description |
+|-------|-------------|
+| `prompt-leverage` | Input improvement |
+| `plan-writing` | Task planning |
+| `test-strategy` | Test design |
+| `github-tools` | GitHub CLI integration |
+| `i18n-localization` | Internationalization |
+| `web-design-guidelines` | Web design review |
+| `webapp-testing` | Web app testing |
+| `seo-fundamentals` | SEO fundamentals |
 
 ## 💻 Sử Dụng
 
