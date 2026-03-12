@@ -44,6 +44,17 @@ Tất cả các thay đổi nổi bật của pack sẽ được ghi lại tại
 
 ## [Unreleased]
 
+### Added
+- Skill `prompt-leverage`: skill nội bộ để cải thiện input trước khi planning, implementation, debugging, hoặc documentation
+
+### Changed
+- Command `/csp-plan`: thêm prompt preflight với các mode `clarify`, `structure`, `brainstorm`
+- Command `/cook`: thêm prompt preflight với các mode `clarify`, `structure`, `execute`
+- Command `/csp-brainstorm`: tích hợp `prompt-leverage` để làm rõ context và tái cấu trúc input trước khi tạo options
+- Command `/csp-debug`: tích hợp `prompt-leverage` để chuẩn hóa bug report trước khi điều tra
+- Command `/csp-docs`: tích hợp `prompt-leverage` để làm rõ audience, scope, và loại tài liệu trước khi viết
+- README: bổ sung tài liệu cho skill `prompt-leverage` và phạm vi tích hợp hiện tại
+
 ### Planned
 - [ ] Thêm nhiều skills (refactor, debug, security-audit)
 - [ ] Hỗ trợ config qua opencode.json

@@ -14,6 +14,12 @@ $ARGUMENTS
 
 Use this mode to explore multiple options before committing to implementation.
 
+Before generating options, use `prompt-leverage` when the request needs cleanup:
+
+- `clarify` when the goal, users, or constraints are missing
+- `structure` when the prompt is long, scattered, or mixes multiple objectives
+- `brainstorm` when the request should first be reframed into an option comparison setup
+
 ## Behavior
 
 1. Clarify goal, users, and constraints

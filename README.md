@@ -6,7 +6,7 @@ Bộ pack mở rộng cho OpenCode theo hướng **usability-first**: dùng 1 ag
 
 - **Agents**: `cook` (primary, single-agent workflow)
 - **Commands**: 22 commands chuyên biệt cho từng workflow
-- **Skills**: `plan-writing`, `coding-standard`, `test-strategy`, `github-tools`
+- **Skills**: `plan-writing`, `coding-standard`, `test-strategy`, `github-tools`, `prompt-leverage`
 
 ## Cài đặt
 
@@ -33,6 +33,35 @@ Lưu ý quan trọng:
 - Không chạy `./bin/install.sh` để cài vào chính repo `opencode-skills-pack`.
 - Script đã chặn self-install để tránh ghi đè source pack.
 - Luôn dùng `-p` để chỉ định đúng thư mục project đích.
+
+## Skill nội bộ mới
+
+### `prompt-leverage`
+
+OpenCode Skill Pack hiện có thêm skill hỗ trợ nội bộ `prompt-leverage` để nâng chất lượng input trước khi planning, implement, debug hoặc viết docs.
+
+Skill này không phải command chính mà là utility skill để các command cấp cao tự dùng khi cần.
+
+### Các mode hỗ trợ
+
+- `clarify` — làm rõ request mơ hồ hoặc thiếu thông tin quan trọng
+- `structure` — tái cấu trúc request dài, rối, hoặc trộn nhiều mục tiêu
+- `brainstorm` — đưa request về dạng so sánh nhiều hướng tiếp cận
+- `execute` — biến intent đã rõ thành instruction sẵn sàng để thực thi
+
+### Tích hợp hiện tại
+
+- `/csp-plan`
+- `/cook`
+- `/csp-brainstorm`
+- `/csp-debug`
+- `/csp-docs`
+
+### Ghi chú sử dụng
+
+- User vẫn nên gọi các command cấp cao như `/csp-plan` hoặc `/cook`
+- `prompt-leverage` hoạt động phía sau khi request cần được làm rõ hoặc làm sạch
+- Không nên kích hoạt nó cho mọi task đơn giản
 
 ## Danh Sách Commands
 
@@ -129,7 +158,8 @@ opencode-skills-pack/
 │   ├── skills/
 │   │   ├── plan-writing/
 │   │   ├── coding-standard/
-│   │   └── test-strategy/
+│   │   ├── test-strategy/
+│   │   └── prompt-leverage/
 │   ├── agents/
 │   │   └── cook.md
 │   └── commands/

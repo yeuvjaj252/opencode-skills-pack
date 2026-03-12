@@ -9,6 +9,18 @@ $ARGUMENTS
 
 ---
 
+## Prompt preflight
+
+Before writing documentation, use `prompt-leverage` when the request is unclear:
+
+- `clarify` if the audience, documentation type, or scope is missing
+- `structure` if multiple documentation goals are mixed into one rough request
+- `execute` once the documentation task is clear enough to draft directly
+
+Keep this step lightweight and only use it when it improves the writing task.
+
+---
+
 ## Documentation Types
 
 ### README.md
@@ -151,3 +163,4 @@ Get list of GET /api/users users.
 - Write for your audience (beginner vs advanced)
 - Include troubleshooting section
 - Add diagrams for complex systems
+- Use `prompt-leverage` first if the docs request is too vague to draft well

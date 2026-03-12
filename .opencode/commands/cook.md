@@ -10,7 +10,7 @@ Task: $ARGUMENTS
 ## Instructions
 
 1. **Default workflow requirement**: always use MCP Serena tools whenever possible
-2. **Understand requirements**: ask clarifying questions if needed
+2. **Understand requirements**: use `prompt-leverage` if the request is ambiguous, messy, or not yet implementation-ready
 3. **Implement changes**:
    - apply requested updates
    - follow project coding standards
@@ -23,6 +23,13 @@ Task: $ARGUMENTS
    - list changed files
    - provide verification results
    - fix failures before completion
+
+### Prompt preflight
+
+- Use `prompt-leverage: clarify` if the request is missing critical requirements
+- Use `prompt-leverage: structure` if the request mixes multiple goals or priorities
+- Use `prompt-leverage: execute` when the request is clear enough to frame direct implementation
+- Keep this preflight lightweight and avoid unnecessary questions
 
 ## Output format
 
