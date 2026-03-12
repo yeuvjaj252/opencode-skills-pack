@@ -1,5 +1,5 @@
 ---
-description: Project planning analysis for tasks - analysis only, no file edits
+description: Project planning analysis - creates PLAN file in docs/ folder
 agent: cook
 subtask: true
 ---
@@ -15,13 +15,10 @@ $ARGUMENTS
 1. **Default workflow requirement**: always use MCP Serena tools whenever possible
 2. **Understand the request**: read carefully and use `prompt-leverage` when the request needs clarification or restructuring
 3. **Inspect the codebase**: identify current structure and relevant areas
-4. **Analyze and plan**:
-   - propose concrete implementation steps
-   - identify files likely to change
-   - estimate effort and timeline
-   - call out potential risks
-5. **Test strategy**: propose how to validate the changes
-6. **Output only plan**: do not perform any code or file changes
+4. **Create plan file**:
+   - generate plan filename: `docs/PLAN-<short-name>.md`
+   - create the plan file with full analysis
+5. **Output summary**: show the created file path and brief summary
 
 ### Prompt preflight
 
@@ -30,9 +27,9 @@ $ARGUMENTS
 - Use `prompt-leverage: brainstorm` if planning depends on comparing approaches first
 - Skip `prompt-leverage` when the request is already clear and actionable
 
-## Output format
+## Plan File Structure
 
-Return results in this format:
+Create the plan file with this structure:
 
 ```markdown
 ## Analysis
