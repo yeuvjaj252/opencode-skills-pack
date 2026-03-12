@@ -115,19 +115,10 @@ while IFS= read -r line; do
     
     target_path="$OPENCODE_DIR/$line"
     
-    if [ -L "$target_path" ]; then
-        link_target=$(readlink -f "$target_path" 2>/dev/null || echo "")
-        
-        # Only remove if it's a symlink from our pack
-        if [[ "$link_target" == "$PACK_DIR"* ]]; then
-            rm -f "$target_path"
-            log_info "Removed: .opencode/$line"
-            ((removed_count++))
-        else
-            log_warn "Skipped (not from this pack): .opencode/$line"
-        fi
-    elif [ -e "$target_path" ]; then
-        log_warn "Skipped (not a symlink): .opencode/$line"
+    if [ -L "$target_path" ] || [ -e "$target_path" ]; then
+        rm -rf "$target_path"
+        log_info "Removed: .opencode/$line"
+        removed_count=$((removed_count + 1))
     fi
 done < "$MANIFEST_PATH"
 
@@ -157,5 +148,5 @@ fi
 log_info ""
 log_info "============================================"
 log_info "Uninstallation complete!"
-log_info "Removed $removed_count symlink(s)"
+log_info "Removed $removed_count item(s)"
 log_info "============================================"
