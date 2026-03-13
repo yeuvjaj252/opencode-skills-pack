@@ -92,6 +92,39 @@ const data: any = ...
 const data: UserData = ...
 ```
 
+## PR Review Heuristics
+
+When reviewing pull requests, prefer **high-signal only** findings:
+
+- Flag correctness, regression, security, and explicit guideline issues
+- Avoid lint/style-only feedback unless the repository rules make it mandatory
+- Prefer issues clearly introduced by the PR over long-standing codebase debt
+- Use git history or blame to validate suspicious changes before reporting
+- Drop findings that cannot be supported with concrete evidence
+
+### Confidence Rubric
+
+- **High** — strong evidence from diff, context, or repository guidance; safe to report by default
+- **Medium** — plausible concern but needs more validation; mention only if broader review is requested
+- **Low** — speculative, weakly supported, or likely false positive; do not report
+
+### PR Review Output Template
+
+```markdown
+## Code Review
+
+### Summary
+- Reviewed: [files / scope]
+- Focus: correctness, guidelines, context
+- Findings: [count]
+
+### Findings
+1. 🔴 High — [issue title]
+   - Why it matters: [impact]
+   - Evidence: `path/file.ts#L10-L22`
+   - Recommendation: [fix direction]
+```
+
 ## Review Comments Guide
 
 ```

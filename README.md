@@ -5,7 +5,7 @@ Bộ pack mở rộng cho OpenCode theo hướng **usability-first**: dùng 1 ag
 ## ✨ Tính năng
 
 - **Agents**: `cook` (primary, single-agent workflow)
-- **Commands**: 22 commands chuyên biệt cho từng workflow
+- **Commands**: 23 commands chuyên biệt cho từng workflow
 - **Skills**: 50 skills (full migration từ claude-skills-pack)
 
 ## 📥 Cài đặt
@@ -96,6 +96,7 @@ Skill này không phải command chính mà là utility skill để các command
 | `/csp-enhance` | ✨ Thêm/cập nhật features | cook |
 | `/csp-ui-ux-pro-max` | 🎯 AI-powered design intelligence | cook |
 | `/csp-github` | 🐙 GitHub workflow: commit, PR, issue operations | cook |
+| `/csp-code-review` | 🧪 Review pull requests with high-signal findings | cook |
 
 ## 📚 Skills Catalog
 
@@ -225,6 +226,9 @@ Skill này không phải command chính mà là utility skill để các command
 
 # Security audit
 /csp-security review hệ thống authentication
+
+# Pull request review
+/csp-code-review 123 --comment
 ```
 
 ### 🔄 Chuyển đổi giữa chế độ

@@ -46,8 +46,11 @@ Tất cả các thay đổi nổi bật của pack sẽ được ghi lại tại
 
 ### Added
 - Skill `prompt-leverage`: skill nội bộ để cải thiện input trước khi planning, implementation, debugging, hoặc documentation
+- Command `/csp-code-review`: workflow review pull request theo hướng OpenCode-native, tập trung vào high-signal findings và hỗ trợ `--comment` qua GitHub CLI
 
 ### Changed
+- Skill `github-tools`: bổ sung workflow review PR với `gh pr view`, `gh pr diff`, `gh pr comment`, skip logic, và review guardrails
+- Skill `code-review-checklist`: bổ sung PR review heuristics, confidence rubric, và output template cho high-signal review
 - Command `/csp-plan`: thêm prompt preflight với các mode `clarify`, `structure`, `brainstorm`
 - Command `/cook`: thêm prompt preflight với các mode `clarify`, `structure`, `execute`
 - Command `/csp-brainstorm`: tích hợp `prompt-leverage` để làm rõ context và tái cấu trúc input trước khi tạo options
