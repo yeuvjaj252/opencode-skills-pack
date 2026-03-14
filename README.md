@@ -5,8 +5,8 @@ Bộ pack mở rộng cho OpenCode theo hướng **usability-first**: dùng 1 ag
 ## ✨ Tính năng
 
 - **Agents**: `cook` (primary, single-agent workflow)
-- **Commands**: 23 commands chuyên biệt cho từng workflow
-- **Skills**: 50 skills (full migration từ claude-skills-pack)
+- **Commands**: 24 commands chuyên biệt cho từng workflow
+- **Skills**: 51+ skills (full migration từ claude-skills-pack, kèm custom workflow skills)
 
 ## 📥 Cài đặt
 
@@ -63,6 +63,39 @@ Skill này không phải command chính mà là utility skill để các command
 - `prompt-leverage` hoạt động phía sau khi request cần được làm rõ hoặc làm sạch
 - Không nên kích hoạt nó cho mọi task đơn giản
 
+## 🧠 Blinko Knowledge Capture
+
+### `blinko-knowledge-capture`
+
+Pack hiện có thêm custom skill `blinko-knowledge-capture` để lưu ý tưởng, note có cấu trúc, và todo vào Blinko theo workflow gọn, dễ truy hồi.
+
+Skill này phù hợp khi bạn muốn:
+- save nhanh một ý tưởng vào Blinko
+- chuyển meeting summary hoặc research note thành note có cấu trúc
+- tạo follow-up task dưới dạng `todo`
+- update note hiện có thay vì tạo trùng nội dung
+
+### Workflow chính
+
+- hiểu intent capture
+- chọn đúng type: `blinko` / `note` / `todo`
+- search trước khi tạo mới
+- create / update / comment có chủ đích
+- trả kết quả rõ ràng cho user
+
+### Ví dụ prompt phù hợp
+
+- `save ý này vào blinko giúp mình`
+- `turn đoạn này thành một note trong Blinko`
+- `tạo todo từ các action items này`
+- `thêm phần này vào note Blinko về auth rollout`
+
+### Ghi chú
+
+- ưu tiên search trước để tránh duplicate
+- chỉ dùng vài hashtag có ích cho retrieval
+- nếu nội dung vừa có knowledge vừa có action items, nên tách thành `note` + `todo`
+
 ## 📋 Danh Sách Commands
 
 ### 🎯 Commands Chính
@@ -97,6 +130,7 @@ Skill này không phải command chính mà là utility skill để các command
 | `/csp-ui-ux-pro-max` | 🎯 AI-powered design intelligence | cook |
 | `/csp-github` | 🐙 GitHub workflow: commit, PR, issue operations | cook |
 | `/csp-code-review` | 🧪 Review pull requests with high-signal findings | cook |
+| `/csp-blinko` | 🧠 Capture ideas, notes, todos into Blinko | cook |
 
 ## 📚 Skills Catalog
 
@@ -188,11 +222,12 @@ Skill này không phải command chính mà là utility skill để các command
 | `game-audio` | Game audio |
 | `multiplayer` | Multiplayer networking |
 
-### Utilities (5 skills)
+### Utilities (9 skills)
 
 | Skill | Description |
 |-------|-------------|
 | `prompt-leverage` | Input improvement |
+| `blinko-knowledge-capture` | Save ideas, notes, and todos into Blinko |
 | `plan-writing` | Task planning |
 | `test-strategy` | Test design |
 | `github-tools` | GitHub CLI integration |
@@ -229,6 +264,9 @@ Skill này không phải command chính mà là utility skill để các command
 
 # Pull request review
 /csp-code-review 123 --comment
+
+# Save an idea or note into Blinko
+/csp-blinko save ý tưởng này vào blinko
 ```
 
 ### 🔄 Chuyển đổi giữa chế độ
@@ -291,7 +329,9 @@ opencode-skills-pack/
 │       ├── csp-preview.md
 │       ├── csp-enhance.md
 │       ├── csp-ui-ux-pro-max.md
-│       └── csp-github.md
+│       ├── csp-github.md
+│       ├── csp-code-review.md
+│       └── csp-blinko.md
 ├── bin/
 │   ├── install.sh
 │   ├── uninstall.sh
@@ -320,6 +360,63 @@ compatibility: opencode
 ```bash
 ./bin/update.sh -f
 ```
+
+## 🔌 Cấu hình Blinko MCP
+
+Để dùng `blinko-knowledge-capture` hoặc command `/csp-blinko`, OpenCode của bạn cần có Blinko tool/MCP khả dụng trong session.
+
+### Toolset Blinko cần có
+
+Ít nhất nên expose các tool sau:
+- `blinko_searchBlinko`
+- `blinko_upsertBlinko`
+- `blinko_updateBlinko`
+- `blinko_createComment`
+
+Tool bổ sung hữu ích:
+- `blinko_listScheduledTasks`
+- `blinko_createScheduledTask`
+- `blinko_deleteScheduledTask`
+- `blinko_webSearch`
+- `blinko_webExtra`
+
+### Cấu hình tham khảo
+
+Tuỳ cách bạn cài OpenCode/MCP bridge, tên field có thể khác nhau. Mục tiêu là map được MCP server của Blinko để agent thấy các tool ở trên.
+
+Ví dụ minh hoạ:
+
+```json
+{
+  "mcpServers": {
+    "blinko": {
+      "command": "npx",
+      "args": ["-y", "<your-blinko-mcp-package>"],
+      "env": {
+        "BLINKO_BASE_URL": "https://your-blinko-instance",
+        "BLINKO_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+### Checklist cấu hình
+
+1. Cài hoặc kết nối MCP server cho Blinko
+2. Khai báo URL instance Blinko
+3. Cấp API key/token phù hợp
+4. Khởi động lại session OpenCode nếu cần
+5. Kiểm tra agent đã thấy các tool `blinko_*`
+
+### Kiểm tra nhanh
+
+Khi cấu hình đúng, bạn có thể dùng các prompt như:
+- `/csp-blinko save ý tưởng này vào blinko`
+- `/csp-blinko tạo todo từ các việc sau`
+- `dùng blinko-knowledge-capture để lưu đoạn này vào Blinko`
+
+> Nếu schema config của OpenCode bản bạn dùng khác ví dụ trên, chỉ cần đảm bảo MCP server Blinko được map thành các tool `blinko_*` tương đương.
 
 ## ⚙️ Cấu hình thêm (Optional)
 
