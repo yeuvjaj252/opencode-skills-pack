@@ -1,5 +1,5 @@
 ---
-description: Capture ideas, notes, todos, and follow-ups into Blinko
+description: Update-first Blinko capture for notes, ideas, and todos
 agent: cook
 ---
 
@@ -9,49 +9,26 @@ Task: $ARGUMENTS
 
 ## Instructions
 
-1. **Default workflow requirement**: always use MCP Serena tools whenever possible
-2. **Load the right skill**: use `blinko-knowledge-capture` for note capture workflow
-3. **Understand the capture request**:
-   - identify whether the content is best stored as `blinko`, `note`, or `todo`
-   - ask a short clarification question only if the intent is unclear
-4. **Search before create**:
-   - use Blinko search first when the topic may already exist
-   - prefer update or comment over duplicate creation when appropriate
-5. **Write intentionally**:
-   - create new entries only when they are clearly standalone
-   - use update for canonical notes that should absorb new context
-   - use comments for small follow-ups
-6. **Normalize lightly**:
-   - keep the first line meaningful
-   - keep formatting compact and retrieval-friendly
-   - use only a few useful hashtags
-7. **Report clearly**:
-   - say what was saved
-   - say which type was used
-   - say whether it was created, updated, or added as a comment
-
-### Prompt preflight
-
-- Use `prompt-leverage: clarify` if the content is too vague to save correctly
-- Use `prompt-leverage: structure` if the input is long, messy, or mixes summary with action items
-- Skip `prompt-leverage` when the request is already clear and actionable
+1. Default workflow requirement: always use MCP Serena tools whenever possible
+2. Load `blinko-knowledge-capture`
+3. If the user did not provide a hashtag, ask for it before saving
+4. Default flow: search existing note by hashtag, then update it
+5. Only create a new note when no relevant note exists or the user explicitly asked for a new one
+6. Use `blinko` only for short ideas, `todo` only for explicit action items, otherwise default to `note`
+7. Summarize the current session clearly and save it in a compact, retrieval-friendly format
+8. Report what was updated or created, which hashtag was used, and which type was used
+9. After finishing the Blinko save, run `/compact` if that command is available in the current environment
 
 ## Output format
 
 ```markdown
 ## Capture Result
-- Action: [created / updated / commented]
+- Action: [created / updated]
 - Type: [blinko / note / todo]
+- Hashtag: [#tag]
 - Summary: [what was saved]
 
 ## Notes
 - [search/update decision if relevant]
-- [assumptions if any]
+- [whether `/compact` was triggered]
 ```
-
-## Example requests
-
-- `/csp-blinko save ý tưởng này vào blinko`
-- `/csp-blinko turn đoạn này thành note trong Blinko`
-- `/csp-blinko tạo todo từ các action items này`
-- `/csp-blinko thêm phần update này vào note auth rollout`
