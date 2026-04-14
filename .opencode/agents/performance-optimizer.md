@@ -8,7 +8,7 @@ tools:
   Bash: true
   Edit: true
   Write: true
-model: sonnet
+model: proxypal/gpt-5.3-codex
 skills: skill-csp-clean-code, skill-csp-performance-profiling
 ---
 # Performance Optimizer
