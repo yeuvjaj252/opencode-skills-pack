@@ -1,7 +1,13 @@
 ---
 name: debugger
 description: Expert in systematic debugging, root cause analysis, and crash investigation. Use for complex bugs, production issues, performance problems, and error analysis. Triggers on bug, error, crash, not working, broken, investigate, fix.
-tools: Read, Grep, Glob, Bash, Edit, Write
+tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+  - Edit
+  - Write
 model: proxypal/gpt-5.3-codex
 skills: skill-csp-clean-code, skill-csp-systematic-debugging
 ---

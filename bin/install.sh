@@ -2,8 +2,8 @@
 
 set -e
 
-PACK_NAME="opencode-csp-plan-cook-pack"
-PACK_VERSION="1.0.0"
+PACK_NAME="opencode-skills-pack"
+PACK_VERSION="2.0.0"
 MANIFEST_FILE=".opencode/.${PACK_NAME}.manifest"
 
 # Colors
@@ -28,7 +28,7 @@ show_usage() {
     cat << EOF
 Usage: $0 [OPTIONS]
 
-Install OpenCode CSP-Plan Cook Pack
+Install OpenCode Skills Pack
 
 OPTIONS:
     -p, --path PATH    Target project path (default: current directory)
@@ -169,15 +169,12 @@ if [ -d "$SKILLS_DIR" ]; then
 fi
 
 # Install agents
-log_info "Installing agents (usability-first)..."
+log_info "Installing agents..."
 AGENTS_DIR="$PACK_DIR/.opencode/agents"
 if [ -d "$AGENTS_DIR" ]; then
     for agent_file in "$AGENTS_DIR"/*.md; do
         if [ -f "$agent_file" ]; then
             agent_name=$(basename "$agent_file" .md)
-            if [ "$agent_name" != "cook" ]; then
-                continue
-            fi
             source_path="$agent_file"
             target_path="$OPENCODE_DIR/agents/$agent_name.md"
             relative_path="agents/$agent_name.md"
@@ -221,17 +218,14 @@ log_info ""
 log_info "============================================"
 log_info "Installation complete!"
 log_info ""
-log_info "Available commands:"
-log_info "  /csp-plan <task>  - Lap ke hoach phan tich"
-log_info "  /cook <task>    - Thuc thi task"
-log_info ""
-log_info "Available agents:"
-log_info "  cook (Tab -> chọn)"
-log_info ""
-log_info "Available skills:"
-log_info "  plan-writing"
-log_info "  coding-standard"
-log_info "  test-strategy"
+log_info "Installed:"
+# Count installed items
+agent_count=$(find "$OPENCODE_DIR/agents" -name "*.md" -type l 2>/dev/null | wc -l)
+cmd_count=$(find "$OPENCODE_DIR/commands" -name "*.md" -type l 2>/dev/null | wc -l)
+skill_count=$(find "$OPENCODE_DIR/skills" -mindepth 1 -maxdepth 1 -type l 2>/dev/null | wc -l)
+log_info "  Agents:   ${agent_count}"
+log_info "  Commands: ${cmd_count}"
+log_info "  Skills:   ${skill_count}"
 log_info ""
 log_info "To update: ./bin/update.sh -p ${TARGET_PATH}"
 log_info "To uninstall: ./bin/uninstall.sh -p ${TARGET_PATH}"

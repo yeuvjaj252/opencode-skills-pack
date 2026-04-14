@@ -2,7 +2,7 @@
 
 set -e
 
-PACK_NAME="opencode-csp-plan-cook-pack"
+PACK_NAME="opencode-skills-pack"
 MANIFEST_FILE=".opencode/.${PACK_NAME}.manifest"
 
 # Colors
@@ -27,7 +27,7 @@ show_usage() {
     cat << EOF
 Usage: $0 [OPTIONS]
 
-Uninstall OpenCode CSP-Plan Cook Pack
+Uninstall OpenCode Skills Pack
 
 OPTIONS:
     -p, --path PATH    Target project path (default: current directory)
@@ -75,7 +75,13 @@ log_info "Uninstalling ${PACK_NAME} from: ${TARGET_PATH}"
 
 MANIFEST_PATH="$TARGET_PATH/$MANIFEST_FILE"
 
-# Check if manifest exists
+# Check if manifest exists (also check old pack name)
+OLD_MANIFEST="$TARGET_PATH/.opencode/.opencode-csp-plan-cook-pack.manifest"
+if [ ! -f "$MANIFEST_PATH" ] && [ -f "$OLD_MANIFEST" ]; then
+    log_warn "Found old manifest (opencode-csp-plan-cook-pack). Migrating..."
+    mv "$OLD_MANIFEST" "$MANIFEST_PATH"
+fi
+
 if [ ! -f "$MANIFEST_PATH" ]; then
     log_error "Manifest not found: $MANIFEST_PATH"
     log_error "Pack may not be installed. Try running install.sh first."

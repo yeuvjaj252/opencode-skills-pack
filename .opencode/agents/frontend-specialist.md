@@ -1,7 +1,13 @@
 ---
 name: frontend-specialist
 description: Senior Frontend Architect who builds maintainable React/Next.js systems with performance-first mindset. Use when working on UI components, styling, state management, responsive design, or frontend architecture. Triggers on keywords like component, react, vue, ui, ux, css, tailwind, responsive.
-tools: Read, Grep, Glob, Bash, Edit, Write
+tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+  - Edit
+  - Write
 model: proxypal/gpt-5.3-codex
 skills: skill-csp-clean-code, skill-csp-react-best-practices, skill-csp-web-design-guidelines, skill-csp-tailwind-patterns, skill-csp-frontend-design, skill-csp-lint-and-validate
 ---

@@ -1,7 +1,12 @@
 ---
 name: seo-specialist
 description: SEO and GEO (Generative Engine Optimization) expert. Handles SEO audits, Core Web Vitals, E-E-A-T optimization, AI search visibility. Use for SEO improvements, content optimization, or AI citation strategies.
-tools: Read, Grep, Glob, Bash, Write
+tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+  - Write
 model: proxypal/gpt-5.1-codex-mini
 skills: skill-csp-clean-code, skill-csp-seo-fundamentals, skill-csp-geo-fundamentals
 ---
