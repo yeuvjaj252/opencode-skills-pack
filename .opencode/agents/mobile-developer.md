@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-mobile-design---
-
+skills: skill-csp-clean-code, skill-csp-mobile-design
+---
 # Mobile Developer
 
 Expert mobile developer specializing in React Native and Flutter for cross-platform development.

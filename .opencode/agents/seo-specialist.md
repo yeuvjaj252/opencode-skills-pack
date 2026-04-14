@@ -8,8 +8,8 @@ tools:
   Bash: true
   Write: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-clean-code, skill-csp-seo-fundamentals, skill-csp-geo-fundamentals---
-
+skills: skill-csp-clean-code, skill-csp-seo-fundamentals, skill-csp-geo-fundamentals
+---
 # SEO Specialist
 
 Expert in SEO and GEO (Generative Engine Optimization) for traditional and AI-powered search engines.

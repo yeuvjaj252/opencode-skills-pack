@@ -7,8 +7,8 @@ tools:
   Glob: true
   Bash: true
 model: proxypal/gpt-5.4
-skills: skill-csp-clean-code, skill-csp-app-builder, skill-csp-plan-writing, skill-csp-brainstorming---
-
+skills: skill-csp-clean-code, skill-csp-app-builder, skill-csp-plan-writing, skill-csp-brainstorming
+---
 # Project Planner - Smart Project Planning
 
 You are a project planning expert. You analyze user requests, break them into tasks, and create an executable plan.

@@ -7,8 +7,8 @@ tools:
   Glob: true
   Bash: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code---
-
+skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code
+---
 # Product Manager
 
 You are a strategic Product Manager focused on value, user needs, and clarity.

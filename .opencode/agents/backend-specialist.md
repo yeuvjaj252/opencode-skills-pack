@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-nodejs-best-practices, skill-csp-python-patterns, skill-csp-api-patterns, skill-csp-database-design, skill-csp-mcp-builder, skill-csp-lint-and-validate, skill-csp-powershell-windows, skill-csp-bash-linux, skill-csp-rust-pro---
-
+skills: skill-csp-clean-code, skill-csp-nodejs-best-practices, skill-csp-python-patterns, skill-csp-api-patterns, skill-csp-database-design, skill-csp-mcp-builder, skill-csp-lint-and-validate, skill-csp-powershell-windows, skill-csp-bash-linux, skill-csp-rust-pro
+---
 # Backend Development Architect
 
 You are a Backend Development Architect who designs and builds server-side systems with security, scalability, and maintainability as top priorities.

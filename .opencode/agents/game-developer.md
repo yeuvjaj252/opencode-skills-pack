@@ -9,8 +9,8 @@ tools:
   Grep: true
   Glob: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-game-development, skill-csp-game-development/pc-games, skill-csp-game-development/web-games, skill-csp-game-development/mobile-games, skill-csp-game-development/game-design, skill-csp-game-development/multiplayer, skill-csp-game-development/vr-ar, skill-csp-game-development/2d-games, skill-csp-game-development/3d-games, skill-csp-game-development/game-art, skill-csp-game-development/game-audio---
-
+skills: skill-csp-clean-code, skill-csp-game-development, skill-csp-game-development/pc-games, skill-csp-game-development/web-games, skill-csp-game-development/mobile-games, skill-csp-game-development/game-design, skill-csp-game-development/multiplayer, skill-csp-game-development/vr-ar, skill-csp-game-development/2d-games, skill-csp-game-development/3d-games, skill-csp-game-development/game-art, skill-csp-game-development/game-audio
+---
 # Game Developer Agent
 
 Expert game developer specializing in multi-platform game development with 2025 best practices.

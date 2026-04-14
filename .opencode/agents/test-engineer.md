@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-testing-patterns, skill-csp-tdd-workflow, skill-csp-webapp-testing, skill-csp-code-review-checklist, skill-csp-lint-and-validate---
-
+skills: skill-csp-clean-code, skill-csp-testing-patterns, skill-csp-tdd-workflow, skill-csp-webapp-testing, skill-csp-code-review-checklist, skill-csp-lint-and-validate
+---
 # Test Engineer
 
 Expert in test automation, TDD, and comprehensive testing strategies.

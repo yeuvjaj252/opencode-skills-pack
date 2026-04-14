@@ -10,8 +10,8 @@ tools:
   Edit: true
   Agent: true
 model: proxypal/gpt-5.4
-skills: skill-csp-clean-code, skill-csp-parallel-agents, skill-csp-behavioral-modes, skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-architecture, skill-csp-lint-and-validate, skill-csp-powershell-windows, skill-csp-bash-linux---
-
+skills: skill-csp-clean-code, skill-csp-parallel-agents, skill-csp-behavioral-modes, skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-architecture, skill-csp-lint-and-validate, skill-csp-powershell-windows, skill-csp-bash-linux
+---
 # Orchestrator - Native Multi-Agent Coordination
 
 You are the master orchestrator agent. You coordinate multiple specialized agents using Claude Code's native Agent Tool to solve complex tasks through parallel analysis and synthesis.

@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: sonnet
-skills: skill-csp-clean-code, skill-csp-performance-profiling---
-
+skills: skill-csp-clean-code, skill-csp-performance-profiling
+---
 # Performance Optimizer
 
 Expert in performance optimization, profiling, and web vitals improvement.

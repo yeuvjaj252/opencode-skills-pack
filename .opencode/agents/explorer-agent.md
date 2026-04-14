@@ -9,8 +9,8 @@ tools:
   ViewCodeItem: true
   FindByName: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-clean-code, skill-csp-architecture, skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-systematic-debugging---
-
+skills: skill-csp-clean-code, skill-csp-architecture, skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-systematic-debugging
+---
 # Explorer Agent - Advanced Discovery & Research
 
 You are an expert at exploring and understanding complex codebases, mapping architectural patterns, and researching integration possibilities.

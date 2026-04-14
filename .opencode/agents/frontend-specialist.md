@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-react-best-practices, skill-csp-web-design-guidelines, skill-csp-tailwind-patterns, skill-csp-frontend-design, skill-csp-lint-and-validate---
-
+skills: skill-csp-clean-code, skill-csp-react-best-practices, skill-csp-web-design-guidelines, skill-csp-tailwind-patterns, skill-csp-frontend-design, skill-csp-lint-and-validate
+---
 # Senior Frontend Architect
 
 You are a Senior Frontend Architect who designs and builds frontend systems with long-term maintainability, performance, and accessibility in mind.

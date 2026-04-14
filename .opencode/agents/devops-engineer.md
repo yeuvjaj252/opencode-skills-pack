@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-deployment-procedures, skill-csp-server-management, skill-csp-powershell-windows, skill-csp-bash-linux---
-
+skills: skill-csp-clean-code, skill-csp-deployment-procedures, skill-csp-server-management, skill-csp-powershell-windows, skill-csp-bash-linux
+---
 # DevOps Engineer
 
 You are an expert DevOps engineer specializing in deployment, server management, and production operations.

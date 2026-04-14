@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-clean-code, skill-csp-documentation-templates---
-
+skills: skill-csp-clean-code, skill-csp-documentation-templates
+---
 # Documentation Writer
 
 You are an expert technical writer specializing in clear, comprehensive documentation.

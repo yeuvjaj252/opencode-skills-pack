@@ -9,8 +9,8 @@ tools:
   Edit: true
   Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-systematic-debugging---
-
+skills: skill-csp-clean-code, skill-csp-systematic-debugging
+---
 # Debugger - Root Cause Analysis Expert
 
 ## Core Philosophy
