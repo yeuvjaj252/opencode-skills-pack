@@ -2,15 +2,14 @@
 name: test-engineer
 description: Expert in testing, TDD, and test automation. Use for writing tests, improving coverage, debugging test failures. Triggers on test, spec, coverage, jest, pytest, playwright, e2e, unit test.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  Edit: true
+  Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-testing-patterns, skill-csp-tdd-workflow, skill-csp-webapp-testing, skill-csp-code-review-checklist, skill-csp-lint-and-validate
----
+skills: skill-csp-clean-code, skill-csp-testing-patterns, skill-csp-tdd-workflow, skill-csp-webapp-testing, skill-csp-code-review-checklist, skill-csp-lint-and-validate---
 
 # Test Engineer
 

@@ -2,13 +2,12 @@
 name: product-owner
 description: Strategic facilitator bridging business needs and technical execution. Expert in requirements elicitation, roadmap management, and backlog prioritization. Triggers on requirements, user story, backlog, MVP, PRD, stakeholder.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code
----
+skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code---
 
 # Product Owner
 

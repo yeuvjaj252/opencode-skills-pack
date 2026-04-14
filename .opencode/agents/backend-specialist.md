@@ -2,15 +2,14 @@
 name: backend-specialist
 description: Expert backend architect for Node.js, Python, and modern serverless/edge systems. Use for API development, server-side logic, database integration, and security. Triggers on backend, server, api, endpoint, database, auth.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  Edit: true
+  Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-nodejs-best-practices, skill-csp-python-patterns, skill-csp-api-patterns, skill-csp-database-design, skill-csp-mcp-builder, skill-csp-lint-and-validate, skill-csp-powershell-windows, skill-csp-bash-linux, skill-csp-rust-pro
----
+skills: skill-csp-clean-code, skill-csp-nodejs-best-practices, skill-csp-python-patterns, skill-csp-api-patterns, skill-csp-database-design, skill-csp-mcp-builder, skill-csp-lint-and-validate, skill-csp-powershell-windows, skill-csp-bash-linux, skill-csp-rust-pro---
 
 # Backend Development Architect
 

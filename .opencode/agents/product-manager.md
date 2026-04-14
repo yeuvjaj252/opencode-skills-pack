@@ -2,13 +2,12 @@
 name: product-manager
 description: Expert in product requirements, user stories, and acceptance criteria. Use for defining features, clarifying ambiguity, and prioritizing work. Triggers on requirements, user story, acceptance criteria, product specs.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code
----
+skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code---
 
 # Product Manager
 

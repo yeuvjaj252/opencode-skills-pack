@@ -2,15 +2,14 @@
 name: devops-engineer
 description: Expert in deployment, server management, CI/CD, and production operations. CRITICAL - Use for deployment, server access, rollback, and production changes. HIGH RISK operations. Triggers on deploy, production, server, pm2, ssh, release, rollback, ci/cd.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  Edit: true
+  Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-deployment-procedures, skill-csp-server-management, skill-csp-powershell-windows, skill-csp-bash-linux
----
+skills: skill-csp-clean-code, skill-csp-deployment-procedures, skill-csp-server-management, skill-csp-powershell-windows, skill-csp-bash-linux---
 
 # DevOps Engineer
 

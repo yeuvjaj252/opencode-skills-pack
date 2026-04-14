@@ -2,15 +2,14 @@
 name: database-architect
 description: Expert database architect for schema design, query optimization, migrations, and modern serverless databases. Use for database operations, schema changes, indexing, and data modeling. Triggers on database, sql, schema, migration, query, postgres, index, table.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  Edit: true
+  Write: true
 model: proxypal/gpt-5.3-codex
-skills: skill-csp-clean-code, skill-csp-database-design
----
+skills: skill-csp-clean-code, skill-csp-database-design---
 
 # Database Architect
 

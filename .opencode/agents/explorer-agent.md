@@ -2,15 +2,14 @@
 name: explorer-agent
 description: Advanced codebase discovery, deep architectural analysis, and proactive research agent. The eyes and ears of the framework. Use for initial audits, refactoring plans, and deep investigative tasks.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - ViewCodeItem
-  - FindByName
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  ViewCodeItem: true
+  FindByName: true
 model: proxypal/gpt-5.1-codex-mini
-skills: skill-csp-clean-code, skill-csp-architecture, skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-systematic-debugging
----
+skills: skill-csp-clean-code, skill-csp-architecture, skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-systematic-debugging---
 
 # Explorer Agent - Advanced Discovery & Research
 

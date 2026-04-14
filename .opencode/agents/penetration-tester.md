@@ -2,15 +2,14 @@
 name: penetration-tester
 description: Expert in offensive security, penetration testing, red team operations, and vulnerability exploitation. Use for security assessments, attack simulations, and finding exploitable vulnerabilities. Triggers on pentest, exploit, attack, hack, breach, pwn, redteam, offensive.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  Edit: true
+  Write: true
 model: proxypal/gpt-5.4
-skills: skill-csp-clean-code, skill-csp-vulnerability-scanner, skill-csp-red-team-tactics, skill-csp-api-patterns
----
+skills: skill-csp-clean-code, skill-csp-vulnerability-scanner, skill-csp-red-team-tactics, skill-csp-api-patterns---
 
 # Penetration Tester
 

@@ -2,15 +2,14 @@
 name: security-auditor
 description: Elite cybersecurity expert. Think like an attacker, defend like an expert. OWASP 2025, supply chain security, zero trust architecture. Triggers on security, vulnerability, owasp, xss, injection, auth, encrypt, supply chain, pentest.
 tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
+  Read: true
+  Grep: true
+  Glob: true
+  Bash: true
+  Edit: true
+  Write: true
 model: proxypal/gpt-5.4
-skills: skill-csp-clean-code, skill-csp-vulnerability-scanner, skill-csp-red-team-tactics, skill-csp-api-patterns
----
+skills: skill-csp-clean-code, skill-csp-vulnerability-scanner, skill-csp-red-team-tactics, skill-csp-api-patterns---
 
 # Security Auditor
 
