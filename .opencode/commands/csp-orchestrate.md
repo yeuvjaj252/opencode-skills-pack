@@ -1,78 +1,55 @@
 ---
-description: Coordinate multiple specialists for complex, multi-domain tasks
-agent: cook
+description: 🎼 Coordinate multiple agents for complex tasks. Use for multi-perspective analysis, comprehensive reviews, or tasks requiring different domain expertise.
+agent: orchestrator
 subtask: true
 ---
 
-# /csp-orchestrate - Multi-Agent Orchestration
+# Multi-Agent Orchestration
 
+You are now in **ORCHESTRATION MODE**. Your task: coordinate specialized agents to solve this complex problem.
+
+## Task to Orchestrate
 $ARGUMENTS
 
 ---
 
-## Critical Requirement
+## 🔴 CRITICAL: Minimum Agent Requirement
 
-> **ORCHESTRATION = AT LEAST 3 DIFFERENT SPECIALIST ROLES**
+> ⚠️ **ORCHESTRATION = MINIMUM 3 DIFFERENT AGENTS**
+>
+> If you use fewer than 3 agents, you are NOT orchestrating - you're just delegating.
 
-If fewer than 3 roles are involved, this is delegation, not orchestration.
+### Agent Selection Matrix
 
-Validation before completion:
-- count invoked specialist roles
-- if `role_count < 3`, stop and expand coverage
-
-### Suggested Role Matrix
-
-| Task Type | Minimum Roles |
-|-----------|---------------|
-| Web App | frontend, backend, testing |
-| API | backend, security, testing |
-| UI/Design | frontend, performance, seo |
-| Database | database, backend, security |
-| Full Stack | planning, frontend, backend |
-| Debug | exploration, implementation, testing |
-| Security | security, devops, backend |
+| Task Type | REQUIRED Agents (minimum) |
+|-----------|---------------------------|
+| **Web App** | frontend-specialist, backend-specialist, test-engineer |
+| **API** | backend-specialist, security-auditor, test-engineer |
+| **UI/Design** | frontend-specialist, seo-specialist, performance-optimizer |
+| **Database** | database-architect, backend-specialist, security-auditor |
+| **Full Stack** | project-planner, frontend-specialist, backend-specialist, devops-engineer |
+| **Debug** | debugger, explorer-agent, test-engineer |
+| **Security** | security-auditor, penetration-tester, devops-engineer |
 
 ---
 
-## 2-Phase Workflow
+## 🔴 STRICT 2-PHASE ORCHESTRATION
 
-### Phase 1: Planning (sequential)
-1. Create or refine plan
-2. Explore codebase if needed
-3. Ask for user approval before implementation
+### PHASE 1: PLANNING
 
-### Phase 2: Implementation (parallelizable)
-- Implement core tasks
-- Validate with lint/typecheck/tests
-- Synthesize a final orchestration report
+| Step | Agent | Action |
+|------|-------|--------|
+| 1 | `project-planner` | Create docs/PLAN.md |
+| 2 | (optional) `explorer-agent` | Codebase discovery if needed |
 
----
+### ⏸️ CHECKPOINT: User Approval
 
-## Output Format
+After the plan is complete, ask for approval before implementation.
 
-```markdown
-## Orchestration Report
+### PHASE 2: IMPLEMENTATION
 
-### Task
-[Original task summary]
-
-### Roles Invoked (>= 3)
-| # | Role | Focus Area | Status |
-|---|------|------------|--------|
-| 1 | planning | Task breakdown | ✅ |
-| 2 | exploration | Codebase mapping | ✅ |
-| 3 | implementation | Code changes | ✅ |
-
-### Verification
-- [x] Lint
-- [x] Typecheck
-- [x] Tests
-
-### Key Findings
-1. ...
-2. ...
-3. ...
-
-### Summary
-[One-paragraph synthesis]
-```
+| Parallel Group | Agents |
+|----------------|--------|
+| Foundation | `database-architect`, `security-auditor` |
+| Core | `backend-specialist`, `frontend-specialist` |
+| Polish | `test-engineer`, `devops-engineer` |

@@ -1,6 +1,6 @@
 ---
-description: Generate and execute tests for files, features, and flows
-agent: cook
+description: 🧪 Test generation and test running command. Creates and executes tests for code.
+agent: test-engineer
 ---
 
 # /csp-test - Test Generation and Execution
@@ -11,7 +11,7 @@ $ARGUMENTS
 
 ## Purpose
 
-Generate tests, run existing tests, and report test quality.
+This command generates tests, runs existing tests, or checks test coverage.
 
 ## Sub-commands
 

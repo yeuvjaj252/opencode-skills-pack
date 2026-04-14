@@ -1,9 +1,9 @@
 ---
-description: Production deployment workflow with pre-flight checks and verification
-agent: cook
+description: 🚀 Deployment command for production releases. Pre-flight checks and deployment execution.
+agent: devops-engineer
 ---
 
-# /csp-deploy - Deployment
+# /csp-deploy - Production Deployment
 
 $ARGUMENTS
 
@@ -11,18 +11,14 @@ $ARGUMENTS
 
 ## Purpose
 
-Handle production deployment safely with clear validation and rollback awareness.
+This command handles production deployment with pre-flight checks, deployment execution, and verification.
 
-## Workflow
+## Sub-commands
 
-1. pre-flight checks (config, secrets, environment)
-2. build and deploy
-3. post-deploy verification
-4. rollback plan if checks fail
-
-## Checklist
-
-- [ ] build passes
-- [ ] required env vars configured
-- [ ] health checks pass
-- [ ] rollback path documented
+```text
+/csp-deploy            - Interactive deployment wizard
+/csp-deploy check      - Run pre-deployment checks only
+/csp-deploy preview    - Deploy to preview/staging
+/csp-deploy production - Deploy to production
+/csp-deploy rollback   - Rollback to previous version
+```

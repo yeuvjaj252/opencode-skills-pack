@@ -1,12 +1,30 @@
 # 🚀 Opencode Skill Pack
 
-Bộ pack mở rộng cho OpenCode theo hướng **usability-first**: dùng 1 agent chính (`cook`) cho toàn bộ command, giảm nhu cầu chuyển tab nhưng vẫn giữ workflow chuyên biệt theo từng lệnh.
+Bộ pack mở rộng cho OpenCode theo hướng **Claude-style multi-agent workflow**: command route tới agent chuyên trách, skills được namespaced theo `skill-csp-*`, và model được map rõ ràng qua provider `proxypal`.
 
 ## ✨ Tính năng
 
-- **Agents**: `cook` (primary, single-agent workflow)
-- **Commands**: 24 commands chuyên biệt cho từng workflow
-- **Skills**: 51+ skills (full migration từ claude-skills-pack, kèm custom workflow skills)
+- **Agents**: primary executor `cook` + bộ specialist agents kiểu Claude như `project-planner`, `orchestrator`, `frontend-specialist`, `backend-specialist`, `security-auditor`, `explorer-agent`, `test-engineer`, `devops-engineer`
+- **Commands**: command chính route sang đúng agent chuyên trách thay vì dồn toàn bộ vào `cook`
+- **Skills**: giữ cả skill tên cũ của OpenCode và bộ `skill-csp-*` để tương thích gần với Claude pack
+- **Models**: agent models được gán rõ ràng bằng `proxypal/gpt-*`
+
+## 🧩 Agent Routing Model
+
+Pack hiện dùng mô hình sau:
+
+- `cook` là execution agent chính cho các flow implement tổng quát
+- các command `/csp-*` quan trọng route sang agent chuyên trách
+- mỗi agent có `model:` riêng trong frontmatter của file `.opencode/agents/*.md`
+
+### Current Model Mapping
+
+| Agent Group | Model |
+|-------------|-------|
+| Planning / Orchestration / Security | `proxypal/gpt-5.4` |
+| Main coding agents | `proxypal/gpt-5.3-codex` |
+| Light / discovery / docs / product | `proxypal/gpt-5.1-codex-mini` |
+| Primary executor `cook` | `proxypal/gpt-5.2-codex` |
 
 ## 📥 Cài đặt
 
@@ -102,27 +120,27 @@ Skill này phù hợp khi bạn muốn:
 
 | Command | Mô Tả | Agent |
 |---------|-------|-------|
-| `/csp-plan` | 📋 Lập kế hoạch phân tích - chỉ phân tích, không sửa file | cook |
+| `/csp-plan` | 📋 Lập kế hoạch phân tích - chỉ phân tích, không sửa file | project-planner |
 | `/cook` | 👨‍🍳 Thực thi task - implement và verify | cook |
 
 ### ⚡ Commands Chuyên Biệt
 
 | Command | Mô Tả | Agent |
 |---------|-------|-------|
-| `/csp-orchestrate` | 🎼 Phối hợp nhiều agent cho task phức tạp | cook |
-| `/csp-explore` | 🔍 Khám phá codebase - hiểu cấu trúc project | cook |
-| `/csp-frontend` | 🎨 Frontend architect - UI components, styling | cook |
-| `/csp-backend` | ⚙️ Backend architect - API, server-side logic | cook |
-| `/csp-database` | 🗄️ Database architect - schema, migrations | cook |
-| `/csp-test` | ✅ Test generation and execution | cook |
-| `/csp-debug` | 🐛 Debug mode - điều tra vấn đề | cook |
-| `/csp-security` | 🔒 Security auditor - vulnerability assessment | cook |
-| `/csp-performance` | 🚀 Performance optimizer | cook |
-| `/csp-devops` | 🐳 DevOps engineer - CI/CD, Docker | cook |
-| `/csp-deploy` | 🚀 Deployment command | cook |
-| `/csp-docs` | 📄 Documentation writer | cook |
+| `/csp-orchestrate` | 🎼 Phối hợp nhiều agent cho task phức tạp | orchestrator |
+| `/csp-explore` | 🔍 Khám phá codebase - hiểu cấu trúc project | explorer-agent |
+| `/csp-frontend` | 🎨 Frontend architect - UI components, styling | frontend-specialist |
+| `/csp-backend` | ⚙️ Backend architect - API, server-side logic | backend-specialist |
+| `/csp-database` | 🗄️ Database architect - schema, migrations | database-architect |
+| `/csp-test` | ✅ Test generation and execution | test-engineer |
+| `/csp-debug` | 🐛 Debug mode - điều tra vấn đề | debugger |
+| `/csp-security` | 🔒 Security auditor - vulnerability assessment | security-auditor |
+| `/csp-performance` | 🚀 Performance optimizer | performance-optimizer |
+| `/csp-devops` | 🐳 DevOps engineer - CI/CD, Docker | devops-engineer |
+| `/csp-deploy` | 🚀 Deployment command | devops-engineer |
+| `/csp-docs` | 📄 Documentation writer | documentation-writer |
 | `/csp-ui` | 🎨 UI/UX design | cook |
-| `/csp-mobile` | 📱 Mobile developer - React Native, Flutter | cook |
+| `/csp-mobile` | 📱 Mobile developer - React Native, Flutter | mobile-developer |
 | `/csp-status` | 📊 Hiển thị trạng thái project và agent | cook |
 | `/csp-brainstorm` | 💡 Brainstorming - khám phá nhiều options | cook |
 | `/csp-preview` | 👁️ Preview server management | cook |
@@ -133,6 +151,16 @@ Skill này phù hợp khi bạn muốn:
 | `/csp-blinko` | 🧠 Capture ideas, notes, todos into Blinko | cook |
 
 ## 📚 Skills Catalog
+
+Pack hiện có 2 lớp skills:
+
+- legacy OpenCode skills: `plan-writing`, `prompt-leverage`, `testing-patterns`, ...
+- Claude-compatible skills: `skill-csp-plan-writing`, `skill-csp-clean-code`, `skill-csp-react-best-practices`, ...
+
+Điều này giúp:
+
+- command/agent cũ vẫn dùng được
+- agent port từ Claude vẫn load đúng dependency gần nguyên bản
 
 ### Core Development (16 skills)
 
@@ -236,6 +264,21 @@ Skill này phù hợp khi bạn muốn:
 | `webapp-testing` | Web app testing |
 | `seo-fundamentals` | SEO fundamentals |
 
+### Claude-Compatible Namespaced Skills
+
+Các skill `skill-csp-*` đã được port song song để khớp hành vi của Claude pack, ví dụ:
+
+- `skill-csp-plan-writing`
+- `skill-csp-clean-code`
+- `skill-csp-context7-research`
+- `skill-csp-react-best-practices`
+- `skill-csp-frontend-design`
+- `skill-csp-webapp-testing`
+- `skill-csp-vulnerability-scanner`
+- `skill-csp-performance-profiling`
+- `skill-csp-mobile-design`
+- `skill-csp-game-development`
+
 ## 💻 Sử Dụng
 
 ### 📌 Ví Dụ Commands
@@ -272,8 +315,9 @@ Skill này phù hợp khi bạn muốn:
 ### 🔄 Chuyển đổi giữa chế độ
 
 Trong OpenCode TUI:
-- Chỉ cần dùng agent `cook` (mặc định)
-- Ưu tiên dùng command (`/csp-*`) để chuyển ngữ cảnh task thay vì đổi agent bằng Tab
+- `cook` vẫn là agent thực thi chính
+- nhưng command `/csp-*` quan trọng sẽ tự route sang specialist agent tương ứng
+- ưu tiên dùng command để chuyển workflow thay vì đổi agent thủ công
 
 ## 🔄 Cập nhật
 
@@ -302,11 +346,17 @@ opencode-skills-pack/
 ├── .opencode/
 │   ├── skills/
 │   │   ├── plan-writing/
-│   │   ├── coding-standard/
-│   │   ├── test-strategy/
-│   │   └── prompt-leverage/
+│   │   ├── prompt-leverage/
+│   │   ├── skill-csp-plan-writing/
+│   │   ├── skill-csp-clean-code/
+│   │   └── ...
 │   ├── agents/
-│   │   └── cook.md
+│   │   ├── cook.md
+│   │   ├── project-planner.md
+│   │   ├── orchestrator.md
+│   │   ├── frontend-specialist.md
+│   │   ├── backend-specialist.md
+│   │   └── ...
 │   └── commands/
 │       ├── csp-plan.md
 │       ├── cook.md
@@ -419,6 +469,33 @@ Khi cấu hình đúng, bạn có thể dùng các prompt như:
 > Nếu schema config của OpenCode bản bạn dùng khác ví dụ trên, chỉ cần đảm bảo MCP server Blinko được map thành các tool `blinko_*` tương đương.
 
 ## ⚙️ Cấu hình thêm (Optional)
+
+### Override model theo agent
+
+Bạn có thể override model trong `opencode.json` nếu không muốn sửa trực tiếp file agent:
+
+```json
+{
+  "agent": {
+    "project-planner": {
+      "model": "proxypal/gpt-5.4"
+    },
+    "frontend-specialist": {
+      "model": "proxypal/gpt-5.3-codex"
+    },
+    "explorer-agent": {
+      "model": "proxypal/gpt-5.1-codex-mini"
+    }
+  }
+}
+```
+
+### Mapping hiện tại trong pack
+
+- `project-planner`, `orchestrator`, `security-auditor`, `penetration-tester` -> `proxypal/gpt-5.4`
+- coding specialists -> `proxypal/gpt-5.3-codex`
+- discovery/docs/product agents -> `proxypal/gpt-5.1-codex-mini`
+- `cook` -> `proxypal/gpt-5.2-codex`
 
 Tạo file `opencode.json` trong project nếu cần thay đổi quyền:
 

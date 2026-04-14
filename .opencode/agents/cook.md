@@ -1,6 +1,7 @@
 ---
 description: Execution agent - implements approved changes with verification
 mode: primary
+model: proxypal/gpt-5.2-codex
 ---
 
 # Cook Agent

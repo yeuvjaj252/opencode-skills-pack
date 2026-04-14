@@ -1,9 +1,9 @@
 ---
-description: Systematic debugging workflow for issues and failures
-agent: cook
+description: 🐞 Debugging command. Activates DEBUG mode for systematic problem investigation.
+agent: debugger
 ---
 
-# /csp-debug - Debug Mode
+# /csp-debug - Systematic Problem Investigation
 
 $ARGUMENTS
 
@@ -11,7 +11,7 @@ $ARGUMENTS
 
 ## Purpose
 
-Investigate bugs and unexpected behavior using a hypothesis-driven process.
+This command activates DEBUG mode for systematic investigation of issues, errors, or unexpected behavior.
 
 Before debugging, use `prompt-leverage` if the bug report is incomplete or messy:
 
@@ -20,19 +20,25 @@ Before debugging, use `prompt-leverage` if the bug report is incomplete or messy
 
 Only ask for information that changes the debugging path.
 
-## Workflow
+## Behavior
 
-1. Gather evidence (error, logs, steps, expected vs actual)
-2. Form and rank hypotheses
-3. Test hypotheses systematically
-4. Identify root cause
-5. Apply fix and prevention steps
+1. **Gather information**
+   - Run a quick `prompt-leverage` pass if the report is vague or messy
+   - Error message
+   - Reproduction steps
+   - Expected vs actual behavior
+   - Recent changes
 
-## Output
+2. **Form hypotheses**
+   - List possible causes
+   - Order by likelihood
 
-- Symptom summary
-- Evidence gathered
-- Hypotheses tested
-- Root cause
-- Fix applied
-- Prevention actions
+3. **Investigate systematically**
+   - Test each hypothesis
+   - Check logs, data flow
+   - Use elimination method
+
+4. **Fix and prevent**
+   - Apply fix
+   - Explain root cause
+   - Add prevention measures
