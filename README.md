@@ -24,7 +24,7 @@ Pack hiện dùng mô hình sau:
 | Planning / Orchestration / Security | `proxypal/gpt-5.4` |
 | Main coding agents | `proxypal/gpt-5.3-codex` |
 | Light / discovery / docs / product | `proxypal/gpt-5.4-mini` |
-| Primary executor `cook` | `proxypal/gpt-5.3-codex` |
+| Primary executor `cook` | `proxypal/gpt-5.4` |
 
 Lưu ý: pack hiện chỉ dùng model từ dòng `gpt-5.3` trở lên. Các model `gpt-5.2` trở xuống không còn được dùng.
 
@@ -497,7 +497,7 @@ Bạn có thể override model trong `opencode.json` nếu không muốn sửa t
 - `project-planner`, `orchestrator`, `security-auditor`, `penetration-tester` -> `proxypal/gpt-5.4`
 - coding specialists -> `proxypal/gpt-5.3-codex`
 - discovery/docs/product agents -> `proxypal/gpt-5.4-mini`
-- `cook` -> `proxypal/gpt-5.3-codex`
+- `cook` -> `proxypal/gpt-5.4`
 
 Tạo file `opencode.json` trong project nếu cần thay đổi quyền:
 
