@@ -7,7 +7,7 @@ tools:
   Glob: true
   Bash: true
   Write: true
-model: proxypal/gpt-5.1-codex-mini
+model: proxypal/gpt-5.4-mini
 skills: skill-csp-clean-code, skill-csp-seo-fundamentals, skill-csp-geo-fundamentals
 ---
 # SEO Specialist

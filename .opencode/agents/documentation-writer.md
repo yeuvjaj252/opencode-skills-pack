@@ -8,7 +8,7 @@ tools:
   Bash: true
   Edit: true
   Write: true
-model: proxypal/gpt-5.1-codex-mini
+model: proxypal/gpt-5.4-mini
 skills: skill-csp-clean-code, skill-csp-documentation-templates
 ---
 # Documentation Writer

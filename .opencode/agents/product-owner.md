@@ -6,7 +6,7 @@ tools:
   Grep: true
   Glob: true
   Bash: true
-model: proxypal/gpt-5.1-codex-mini
+model: proxypal/gpt-5.4-mini
 skills: skill-csp-plan-writing, skill-csp-brainstorming, skill-csp-clean-code
 ---
 # Product Owner
